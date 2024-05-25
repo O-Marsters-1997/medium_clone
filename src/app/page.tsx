@@ -1,18 +1,16 @@
-import * as stylex from "@stylexjs/stylex";
+import { ReactNode } from "react";
+import Button from "~/components/Button";
+import Test from "~/components/Test";
 
-const Home = () => {
+const Home = ({}: { children: ReactNode }) => {
   return (
-    <main {...stylex.props(s.main)}>
+    <main>
       <p>Hello world</p>
+      <Button>
+        <Test />
+      </Button>
     </main>
   );
 };
-
-const s = stylex.create({
-  main: {
-    background: "#333",
-    color: "white",
-  },
-});
 
 export default Home;

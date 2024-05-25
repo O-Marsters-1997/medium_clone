@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
-const stylexPlugin = require("@stylexjs/nextjs-plugin");
-const withMDX = require("@next/mdx")();
+
+const localesPlugin = require("@react-aria/optimize-locales-plugin");
 
 const nextConfig = {
-  // Configure `pageExtensions` to include MDX files
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  transpilePackages: ["@stylexjs/open-props"],
-  // Optionally, add any other Next.js config below
+  webpack(config, { isServer }) {
+    if (!isServer) {
+      // Don't include any locale strings in the client JS bundle.
+      config.plugins.push(localesPlugin.webpack({ locales: [] }));
+    }
+    return config;
+  },
 };
 
-module.exports = stylexPlugin({
-  rootDir: __dirname,
-})(withMDX(nextConfig));
+module.exports = nextConfig;

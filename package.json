@@ -17,8 +17,10 @@
     "@stylexjs/stylex": "^0.4.1",
     "@types/mdx": "^2.0.10",
     "bright": "^0.8.4",
+    "glob": "^10.4.1",
     "next": "14.0.1",
     "react": "18.2.0",
+    "react-aria-components": "^1.2.1",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
@@ -26,9 +28,7 @@
     "@babel/plugin-syntax-flow": "^7.22.5",
     "@babel/plugin-syntax-jsx": "^7.22.5",
     "@babel/plugin-syntax-typescript": "^7.22.5",
-    "@stylexjs/babel-plugin": "^0.4.1",
-    "@stylexjs/eslint-plugin": "^0.4.1",
-    "@stylexjs/nextjs-plugin": "^0.4.1",
+    "@react-aria/optimize-locales-plugin": "^1.1.1",
     "@testing-library/react": "^14.1.2",
     "@types/jest": "^29.5.11",
     "@types/node": "20.8.10",
