@@ -1,10 +1,8 @@
-"use client";
-
 import React from "react";
+import { myStyle } from "~/styles/styles.css";
 
 const Test = () => {
-  console.log("hello");
-  return <div>Test</div>;
+  return <div className={myStyle}>Test</div>;
 };
 
 export default Test;

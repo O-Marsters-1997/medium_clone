@@ -16,6 +16,8 @@
     "@stylexjs/open-props": "^0.4.1",
     "@stylexjs/stylex": "^0.4.1",
     "@types/mdx": "^2.0.10",
+    "@vanilla-extract/css": "^1.15.2",
+    "@vanilla-extract/next-plugin": "^2.4.1",
     "bright": "^0.8.4",
     "glob": "^10.4.1",
     "next": "14.0.1",
