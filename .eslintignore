@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*env.d.ts
+assets/*.json
+
+# Individual files
+.prettierrc.js
+.eslintrc.js
+logger.ts
+i18n.ts
+support.ts

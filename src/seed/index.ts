@@ -1,4 +1,6 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from "@prisma/client";
+import { logger } from "../utils/logger";
+
 const prisma = new PrismaClient();
 
 type User = {
@@ -21,9 +23,9 @@ const main = async () => {
 
     await prisma.user.createMany({ data: users });
 
-    console.log(`Successfully created ${users.length} users`);
+    logger.log(`Successfully created ${users.length} users`);
   } catch (err) {
-    console.error(err);
+    logger.error(err);
   }
 };
 
@@ -32,7 +34,7 @@ main()
     await prisma.$disconnect();
   })
   .catch(async (err) => {
-    console.error(err);
+    logger.error(err);
     await prisma.$disconnect();
     process.exit(1);
   });

@@ -1,8 +1,7 @@
-import { ReactNode } from "react";
 import Button from "~/components/Button";
 import Test from "~/components/Test";
 
-const Home = ({}: { children: ReactNode }) => {
+const Home = () => {
   return (
     <main>
       <p>Hello world</p>
