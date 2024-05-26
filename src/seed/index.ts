@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import { faker } from "@faker-js/faker";
 import { logger } from "../utils/logger";
 
 const prisma = new PrismaClient();
@@ -8,18 +9,22 @@ type User = {
   email: string;
 };
 
-const users: User[] = [
-  { name: "Tom", email: "tom@hello.com" },
-  { name: "Bob", email: "bob@hello.com" },
-  { name: "Mark", email: "mark@hello.com" },
-  { name: "Olly", email: "olly@hello.com" },
-  { name: "Hannah", email: "hannah@hello.com" },
-  { name: "Fred", email: "fred@hello.com" },
-];
+const generateFakeUser = (): User => {
+  const name = faker.person.firstName();
+  const email = faker.internet.email({
+    firstName: name,
+  });
+  return { name, email };
+};
+
+const generateUsers = (n: number) => {
+  return Array.from({ length: n }, generateFakeUser);
+};
 
 const main = async () => {
   try {
     await prisma.user.deleteMany();
+    const users = generateUsers(50);
 
     await prisma.user.createMany({ data: users });
 

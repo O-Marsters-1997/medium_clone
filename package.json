@@ -28,6 +28,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@react-aria/optimize-locales-plugin": "^1.1.1",
     "@testing-library/react": "^14.1.2",
     "@types/jest": "^29.5.11",
