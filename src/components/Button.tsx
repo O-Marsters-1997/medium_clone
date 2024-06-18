@@ -4,7 +4,11 @@ import React, { type ReactNode } from "react";
 import { Button } from "react-aria-components";
 import { logger } from "~/utils/logger";
 
-const MyButton = ({ children }: { children: ReactNode }) => {
+type Props = {
+  children: ReactNode;
+};
+
+const MyButton = ({ children }: Props) => {
   return (
     <div>
       <Button
@@ -12,9 +16,8 @@ const MyButton = ({ children }: { children: ReactNode }) => {
           logger.log("hello world");
         }}
       >
-        Click me
+        {children}
       </Button>
-      {children}
     </div>
   );
 };

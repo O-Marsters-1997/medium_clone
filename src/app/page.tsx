@@ -1,13 +1,13 @@
 import Button from "~/components/Button";
 import Test from "~/components/Test";
+import db from "~/modules/db";
 
-const Home = () => {
+const Home = async () => {
+  const posts = await db.post.findMany({ orderBy: { createdAt: "desc" } });
+
   return (
     <main>
-      <p>Hello world</p>
-      <Button>
-        <Test />
-      </Button>
+      <Button>Click me</Button>=
     </main>
   );
 };

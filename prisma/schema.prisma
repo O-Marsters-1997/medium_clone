@@ -13,17 +13,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        String  @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  String?
-}
-
-model User {
-  id        String   @id @default(cuid())
+model Author {
+  id        String   @id @default(uuid())
   name      String?
   email     String?  @unique
   createdAt DateTime @default(now()) @map(name: "created_at")
@@ -33,10 +24,16 @@ model User {
   @@map(name: "users")
 }
 
-model Test {
-  id      String @id @default(cuid())
-  title   String
-  another String
+model Post {
+  id        String   @id @default(uuid())
+  title     String
+  content   String
+  published Boolean  @default(false)
+  author    Author?  @relation(fields: [authorId], references: [id])
+  authorId  String
+  createdAt DateTime @default(now()) @map(name: "created_at")
+  updatedAt DateTime @updatedAt @map(name: "updated_at")
 
-  @@map(name: "tests")
+  @@index(createdAt)
+  @@map(name: "posts")
 }
