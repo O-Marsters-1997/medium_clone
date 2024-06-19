@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LocalizedStringProvider } from "react-aria-components/i18n";
+import Header from "~/components/Header";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,6 +23,7 @@ const RootLayout = ({
     <html lang="en" className={inter.className}>
       <body>
         <LocalizedStringProvider locale="en" />
+        <Header />
         {children}
       </body>
     </html>
