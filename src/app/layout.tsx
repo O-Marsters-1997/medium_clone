@@ -26,7 +26,6 @@ const RootLayout = ({
         <div id="app" className={styles.app}>
           <LocalizedStringProvider locale="en" />
           <Header />
-
           <div className={styles.main}>{children}</div>
           <Footer />
         </div>

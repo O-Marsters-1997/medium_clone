@@ -1,5 +1,6 @@
 import { style, styleVariants } from "@vanilla-extract/css";
-import { colors, breakpoints } from "~/styles/theme.css";
+import { colors } from "~/styles/theme.css";
+import { media } from "~/styles/variables.css";
 
 const baseButton = style({
   color: colors.text.secondary,
@@ -9,7 +10,7 @@ const baseButton = style({
   fontSize: ".75rem",
   cursor: "pointer",
   "@media": {
-    [`(min-width: ${breakpoints.sm})`]: {},
+    [media.sm]: {},
   },
 });
 

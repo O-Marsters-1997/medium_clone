@@ -1,6 +1,6 @@
 import React from "react";
 import { styles } from "~/components/Logo.css";
-import { colorTokens } from "~/styles/theme.css";
+import { colorPalette } from "~/styles/variables.css";
 
 type Props = {
   theme: "light" | "dark";
@@ -10,7 +10,7 @@ const Logo = ({ theme }: Props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      fill={theme === "light" ? colorTokens.bg.black : colorTokens.bg.white}
+      fill={theme === "light" ? colorPalette.black : colorPalette.white}
       viewBox="0 0 3940 610"
       className={styles}
     >

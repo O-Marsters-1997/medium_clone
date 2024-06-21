@@ -1,19 +1,18 @@
 import { style } from "@vanilla-extract/css";
-import { colors, breakpoints } from "~/styles/theme.css";
+import { pagePadding } from "~/styles/utils";
+import { colors } from "~/styles/theme.css";
+import { media, spacing } from "~/styles/variables.css";
 
 export const styles = {
-  header: style({
-    display: "flex",
-    justifyContent: "flex-start",
-    alignItems: "center",
-    padding: ".5em 2.5em",
-    borderBottom: `1px solid ${colors.text.primary}`,
-    "@media": {
-      [`screen and (min-width: ${breakpoints.md})`]: {
-        padding: ".5em 7.5em",
-      },
+  header: style([
+    pagePadding(),
+    {
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      borderBottom: `1px solid ${colors.text.primary}`,
     },
-  }),
+  ]),
   navigation: style({
     marginLeft: "auto",
   }),
@@ -25,12 +24,12 @@ export const styles = {
     gap: "1.5em",
     listStyle: "none",
     cursor: "pointer",
-    padding: "0 .5rem",
+    padding: `0 ${spacing.s2}`,
   }),
   navListItem: style({
     display: "none",
     "@media": {
-      [`screen and (min-width: ${breakpoints.md})`]: {
+      [media.md]: {
         display: "block",
       },
     },

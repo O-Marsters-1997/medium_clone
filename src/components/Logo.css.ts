@@ -1,11 +1,11 @@
-import { style, styleVariants } from "@vanilla-extract/css";
-import { breakpoints, colors } from "~/styles/theme.css";
+import { style } from "@vanilla-extract/css";
+import { media } from "~/styles/variables.css";
 
 export const styles = style({
   width: "auto",
-  height: "1.5rem",
+  height: "1.4rem",
   "@media": {
-    [`screen and (min-width: ${breakpoints.sm})`]: {
+    [media.md]: {
       height: "1.75rem",
     },
   },
