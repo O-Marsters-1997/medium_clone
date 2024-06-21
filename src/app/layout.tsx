@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import { LocalizedStringProvider } from "react-aria-components/i18n";
 import Header from "~/components/Header";
+import Footer from "~/components/Footer";
+import { styles } from "~/styles/globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +23,12 @@ const RootLayout = ({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <LocalizedStringProvider locale="en" />
-        <Header />
-        {children}
+        <div id="app" className={styles.app}>
+          <LocalizedStringProvider locale="en" />
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

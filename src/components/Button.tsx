@@ -2,22 +2,17 @@
 
 import React, { type ReactNode } from "react";
 import { Button } from "react-aria-components";
-import { logger } from "~/utils/logger";
+import { buttonVariants } from "./Button.css";
 
 type Props = {
   children: ReactNode;
+  variant: keyof typeof buttonVariants;
 };
 
-const MyButton = ({ children }: Props) => {
+const MyButton = ({ children, variant }: Props) => {
   return (
     <div>
-      <Button
-        onPress={() => {
-          logger.log("hello world");
-        }}
-      >
-        {children}
-      </Button>
+      <Button className={buttonVariants[variant]}>{children}</Button>
     </div>
   );
 };
