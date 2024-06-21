@@ -15,5 +15,8 @@ export const styles = {
   app: style({
     background: colors.bg.primary,
     minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
   }),
+  main: style({}),
 };

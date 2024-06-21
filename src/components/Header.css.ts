@@ -8,13 +8,9 @@ export const styles = {
     alignItems: "center",
     padding: ".5em 2.5em",
     borderBottom: `1px solid ${colors.text.primary}`,
-  }),
-  logo: style({
-    width: "auto",
-    height: "1.5rem",
     "@media": {
-      [`screen and (min-width: ${breakpoints.sm})`]: {
-        height: "1.75rem",
+      [`screen and (min-width: ${breakpoints.md})`]: {
+        padding: ".5em 7.5em",
       },
     },
   }),

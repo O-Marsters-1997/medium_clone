@@ -3,13 +3,14 @@ import Image from "next/image";
 import Medium from "~/assets/images/medium.svg";
 import Button from "~/components/Button";
 import { styles } from "./Header.css";
+import Logo from "./Logo";
 
 const Header = () => {
   const navLinks = ["Our story", "Write", "Sign in"];
 
   return (
     <div className={styles.header}>
-      <Image priority src={Medium} alt="medium logo" className={styles.logo} />
+      <Logo theme="light" />
       <nav className={styles.navigation}>
         <ul className={styles.navList}>
           {navLinks.map((link, index) => (
