@@ -1,15 +1,17 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 import "~/styles/theme/typography.css";
-import { media, spacing } from "./variables.css";
-import { colors } from "./theme.css";
+import { colors, typograpghy } from "./theme.css";
+import { colorPalette } from "./variables.css";
 
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
+  margin: 0,
 });
 
 globalStyle("body", {
   margin: 0,
   fontSize: "12px",
+  fontFamily: typograpghy.body,
 });
 
 export const styles = {
@@ -25,5 +27,9 @@ export const styles = {
     display: "flex",
     flexDirection: "column",
     flex: 1,
+  }),
+  link: style({
+    textDecoration: "none",
+    color: colors.text.primary,
   }),
 };

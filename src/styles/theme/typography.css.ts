@@ -1,10 +1,39 @@
-import { globalStyle } from "@vanilla-extract/css";
-import { vars } from "~/styles/theme.css";
+import { style, styleVariants } from "@vanilla-extract/css";
+import { typograpghy } from "~/styles/theme.css";
+import { fontSizes, media, spacing } from "../variables.css";
 
-globalStyle("body", {
-  fontFamily: vars.typograpghy.body,
-});
+const baseTextStyles = {
+  body: style({
+    fontFamily: typograpghy.body,
+  }),
+  heading: style({
+    fontFamily: typograpghy.heading,
+    fontWeight: "normal",
+  }),
+};
 
-globalStyle("h1,h2,h3,h4,h5,h6", {
-  fontFamily: vars.typograpghy.headings,
+const { body, heading } = baseTextStyles;
+
+export const textVariants = styleVariants({
+  body1: [
+    body,
+    {
+      fontSize: fontSizes.body,
+    },
+  ],
+  body2: [
+    body,
+    {
+      fontSize: fontSizes.bodyLg,
+    },
+  ],
+  h2: [heading, fontSizes.h2],
+  h3: [
+    body,
+    fontSizes.h3,
+    {
+      fontWeight: "normal",
+      lineHeight: "1.75rem",
+    },
+  ],
 });

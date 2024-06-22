@@ -10,11 +10,7 @@ type Props = {
 };
 
 const MyButton = ({ children, variant }: Props) => {
-  return (
-    <div>
-      <Button className={buttonVariants[variant]}>{children}</Button>
-    </div>
-  );
+  return <Button className={buttonVariants[variant]}>{children}</Button>;
 };
 
 export default MyButton;

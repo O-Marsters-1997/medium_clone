@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 import { LocalizedStringProvider } from "react-aria-components/i18n";
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 import { styles } from "~/styles/globals.css";
 
-const inter = Inter({
+const lato = Lato({
   subsets: ["latin"],
-  display: "swap",
+  style: "normal",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" className={lato.className}>
       <body>
         <div id="app" className={styles.app}>
           <LocalizedStringProvider locale="en" />

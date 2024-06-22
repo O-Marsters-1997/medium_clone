@@ -1,14 +1,14 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 import { colors } from "~/styles/theme.css";
-import { media } from "~/styles/variables.css";
+import { fontSizes, media } from "~/styles/variables.css";
 
 const baseButton = style({
   color: colors.text.secondary,
   borderRadius: "2.5em",
-  padding: "1em",
+  padding: ".8rem 1.25rem",
   border: "none",
-  fontSize: ".75rem",
   cursor: "pointer",
+  width: "fit-content",
   "@media": {
     [media.sm]: {},
   },
@@ -21,5 +21,6 @@ const buttons = {
 
 export const buttonVariants = styleVariants(buttons, (buttonBg) => [
   baseButton,
+  fontSizes.interactive,
   { background: buttonBg },
 ]);

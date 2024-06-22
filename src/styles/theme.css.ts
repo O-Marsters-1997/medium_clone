@@ -1,5 +1,6 @@
 import { createGlobalTheme } from "@vanilla-extract/css";
 import { colorPalette } from "~/styles/variables.css";
+import { fonts } from "~/styles/base/fontFace.css";
 
 const { primary, white, bold, black, btnPrimary, btnSecondary } = colorPalette;
 
@@ -21,8 +22,8 @@ export const vars = createGlobalTheme("#app", {
     },
   },
   typograpghy: {
-    headings: 'gt-super, Georgia, Cambria, "Times New Roman", Times, serif',
-    body: 'sohne, "Helvetica Neue", Helvetica, Arial, sans-serif',
+    heading: `${fonts.heading}, Georgia, Cambria, "Times New Roman", Times, serif`,
+    body: `${fonts.body}, serif, Roboto, Helvetica, Arial, sans-serif`,
   },
 });
 

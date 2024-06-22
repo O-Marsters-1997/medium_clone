@@ -4,9 +4,19 @@ import Medium from "~/assets/images/medium.svg";
 import Button from "~/components/Button";
 import { styles } from "./Header.css";
 import Logo from "./Logo";
+import Link from "~/components/Link";
+
+type NavLink = {
+  label: string;
+  url: string;
+};
 
 const Header = () => {
-  const navLinks = ["Our story", "Write", "Sign in"];
+  const navLinks: NavLink[] = [
+    { label: "Our story", url: "" },
+    { label: "Write", url: "" },
+    { label: "Sign in", url: "/login" },
+  ];
 
   return (
     <div className={styles.header}>
@@ -14,9 +24,9 @@ const Header = () => {
       <nav className={styles.navigation}>
         <ul className={styles.navList}>
           {navLinks.map((link, index) => (
-            <li key={index} className={styles.navListItem}>
-              {link}
-            </li>
+            <Link href={link.url} key={index} className={styles.navListItem}>
+              {link.label}
+            </Link>
           ))}
           <Button variant="primary">Get started</Button>
         </ul>
