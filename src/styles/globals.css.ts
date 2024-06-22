@@ -1,7 +1,6 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 import "~/styles/theme/typography.css";
 import { colors, typograpghy } from "./theme.css";
-import { colorPalette } from "./variables.css";
 
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",

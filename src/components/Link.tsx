@@ -1,6 +1,6 @@
 "use client";
 
-import React, { ReactNode } from "react";
+import React, { type ReactNode } from "react";
 import { clsx } from "clsx";
 import { Link as BaseLink } from "react-aria-components";
 import { fontSizes } from "~/styles/variables.css";
@@ -16,7 +16,6 @@ const Link = ({ href, children, className }: Props) => {
   return (
     <BaseLink
       href={href}
-      autoFocus
       className={clsx(styles.link, fontSizes.interactive, className)}
     >
       {children}

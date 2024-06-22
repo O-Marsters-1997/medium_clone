@@ -55,12 +55,11 @@ const main = async () => {
   }
 };
 
-main().then(async () => {
-  try {
+main()
+  .then(async () => {
     await prisma.$disconnect();
-  } catch (err) {
+  })
+  .catch((err) => {
     logger.error(err);
-    await prisma.$disconnect();
     process.exit(1);
-  }
-});
+  });

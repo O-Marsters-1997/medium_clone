@@ -1,6 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Medium from "~/assets/images/medium.svg";
 import Button from "~/components/Button";
 import { styles } from "./Header.css";
 import Logo from "./Logo";

@@ -1,4 +1,4 @@
-import { style, styleVariants } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import { pagePadding } from "~/styles/utils";
 import { colors } from "~/styles/theme.css";
 import { media, spacing } from "~/styles/variables.css";

@@ -1,6 +1,6 @@
 import { style, styleVariants } from "@vanilla-extract/css";
 import { typograpghy } from "~/styles/theme.css";
-import { fontSizes, media, spacing } from "../variables.css";
+import { fontSizes } from "../variables.css";
 
 const baseTextStyles = {
   body: style({

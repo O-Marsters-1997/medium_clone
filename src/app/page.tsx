@@ -1,7 +1,5 @@
-import { style } from "@vanilla-extract/css";
 import Button from "~/components/Button";
 import Text from "~/components/Text";
-import db from "~/modules/db";
 import pageStyles from "~/styles/pages/Home.css";
 
 const Home = async () => {
