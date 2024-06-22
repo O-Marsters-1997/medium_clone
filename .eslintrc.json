@@ -3,5 +3,9 @@
     "next/core-web-vitals",
     "next",
     "eslint-config-personal-olly-marsters"
-  ]
+  ],
+  "rules": {
+    // TODO: remove from linting config
+    "@typescript-eslint/strict-boolean-expressions": "off"
+  }
 }
