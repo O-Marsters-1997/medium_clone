@@ -34,7 +34,7 @@ export const fontSizes = {
     fontSize: "3.5rem",
     "@media": {
       [media.lg]: {
-        fontSize: "4.25rem",
+        fontSize: "4.75rem",
       },
     },
   }),

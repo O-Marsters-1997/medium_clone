@@ -9,6 +9,7 @@ const baseButton = style({
   border: "none",
   cursor: "pointer",
   width: "fit-content",
+  textDecoration: "none",
   "@media": {
     [media.sm]: {},
   },
