@@ -1,13 +1,15 @@
-name: preview
+name: deploy
 env:
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 on:
-  pull_request:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
-  preview:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,6 +19,15 @@ jobs:
 
       - name: Installing dependencies
         run: bun install
+
+      - name: Running linting
+        run: bun lint
+
+      - name: Install Prisma CLI
+        run: bun install @prisma/cli --save-dev
+
+      - name: Deploy Prisma migrations
+        run: bun prisma:deploy
 
       - name: Install Vercel CLI
         run: bun install --global vercel@latest
