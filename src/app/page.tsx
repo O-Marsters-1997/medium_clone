@@ -2,7 +2,6 @@ import Button from "~/components/Button";
 import Text from "~/components/Text";
 import LoginModal from "~/screens/login/LoginModal";
 import pageStyles from "~/styles/pages/Home.css";
-import { logger } from "~/utils/logger";
 
 type Props = {
   searchParams: Record<string, string> | null | undefined;
