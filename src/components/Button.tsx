@@ -4,6 +4,7 @@ import React, { type ReactNode } from "react";
 import { Button } from "react-aria-components";
 import Link from "next/link";
 import { buttonVariants } from "./Button.css";
+import { logger } from "~/utils/logger";
 
 type Props = {
   children: ReactNode;
@@ -12,6 +13,8 @@ type Props = {
 };
 
 const MyButton = ({ children, variant, href }: Props) => {
+  logger.log("will this log");
+
   if (href !== undefined) {
     return (
       <Link href={href} className={buttonVariants[variant]}>
