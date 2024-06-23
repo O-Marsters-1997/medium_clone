@@ -96,3 +96,11 @@ model Post {
   @@index(createdAt)
   @@map(name: "posts")
 }
+
+model Game {
+  id     String @id @default(uuid())
+  Winner String
+  Loser  String
+
+  @@map("games")
+}
