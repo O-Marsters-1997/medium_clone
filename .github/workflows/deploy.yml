@@ -1,0 +1,42 @@
+name: deploy
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Installing dependencies
+        run: bun install
+
+      - name: Running linting
+        run: bun lint
+
+      - name: Install Prisma CLI
+        run: bun install @prisma/cli --save-dev
+
+      - name: Deploy Prisma migrations
+        run: bun prisma:deploy
+
+      - name: Install Vercel CLI
+        run: bun install --global vercel@latest
+
+      - name: Pull settings from Vercel
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build vercel preview
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy vercel preview
+        run: vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
