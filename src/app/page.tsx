@@ -2,13 +2,15 @@ import Button from "~/components/Button";
 import Text from "~/components/Text";
 import LoginModal from "~/screens/login/LoginModal";
 import pageStyles from "~/styles/pages/Home.css";
+import { logger } from "~/utils/logger";
 
 type Props = {
   searchParams: Record<string, string> | null | undefined;
 };
 
 const Home = async ({ searchParams }: Props) => {
-  // This is a test comment
+  logger.log("will this log");
+
   const showModal = !!searchParams?.modal;
   const { heroContainer, heroWrapper } = pageStyles;
 
