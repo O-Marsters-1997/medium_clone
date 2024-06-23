@@ -63,14 +63,6 @@ model Session {
   @@map("sessions")
 }
 
-model Thingy {
-  id      String @id @default(cuid())
-  Name    String
-  Another String
-
-  @@map("thingies")
-}
-
 model VerificationToken {
   identifier String
   token      String
