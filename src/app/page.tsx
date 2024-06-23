@@ -9,8 +9,6 @@ type Props = {
 };
 
 const Home = async ({ searchParams }: Props) => {
-  logger.log("will this log");
-
   const showModal = !!searchParams?.modal;
   const { heroContainer, heroWrapper } = pageStyles;
 
