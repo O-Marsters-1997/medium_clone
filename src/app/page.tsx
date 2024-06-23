@@ -8,6 +8,7 @@ type Props = {
 };
 
 const Home = async ({ searchParams }: Props) => {
+  // This is a test comment
   const showModal = !!searchParams?.modal;
   const { heroContainer, heroWrapper } = pageStyles;
 
