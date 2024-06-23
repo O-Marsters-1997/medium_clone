@@ -64,8 +64,9 @@ model Session {
 }
 
 model Thingy {
-  id   String @id @default(cuid())
-  Name String
+  id      String @id @default(cuid())
+  Name    String
+  Another String
 
   @@map("thingies")
 }
