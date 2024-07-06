@@ -56,6 +56,12 @@ export const fontSizes = {
   }),
 } as const;
 
+export const iconSizes = {
+  sm: "1rem",
+  md: "2rem",
+  lg: "4.5rem",
+} as const;
+
 export const spacing = {
   s0: 0,
   s1: ".25rem",

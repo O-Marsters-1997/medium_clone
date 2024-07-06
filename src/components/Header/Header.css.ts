@@ -13,6 +13,11 @@ export const styles = {
       borderBottom: `1px solid ${colors.text.primary}`,
     },
   ]),
+  logoWrapper: style({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }),
   navigation: style({
     marginLeft: "auto",
   }),

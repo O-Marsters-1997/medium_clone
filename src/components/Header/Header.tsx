@@ -1,11 +1,12 @@
 import React from "react";
 import Button from "~/components/Button";
-import { styles } from "../Header.css";
+import { styles } from "./Header.css";
 import Logo from "../Logo";
 import Link from "~/components/Link";
 import { routes } from "~/utils/routes";
 import { getUser } from "~/utils";
 import Icon from "../Icon";
+import Search from "./Search";
 
 type NavLink = {
   label: string;
@@ -41,18 +42,12 @@ const Header = async () => {
 
   const AuthedHeader = (
     <div className={styles.header}>
-      <div>
+      <div className={styles.logoWrapper}>
         <Logo theme="light" />
-        <div className="search">
-          <Icon />
-          <span>Search</span>
-        </div>
+        <Search />
       </div>
       <nav className={styles.navigation}>
-        <Icon />
         <span>Write</span>
-        <Icon />
-        <Icon className="profile" />
       </nav>
     </div>
   );
