@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { pagePadding } from "~/styles/utils";
-import { colors } from "~/styles/theme.css";
+import { colors } from "~/styles/theme/theme.css";
 import { media, spacing } from "~/styles/variables.css";
 
 export const styles = {

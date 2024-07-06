@@ -1,5 +1,5 @@
 import { style, styleVariants } from "@vanilla-extract/css";
-import { typograpghy } from "~/styles/theme.css";
+import { typograpghy } from "~/styles/theme/theme.css";
 import { fontSizes } from "../variables.css";
 
 const baseTextStyles = {

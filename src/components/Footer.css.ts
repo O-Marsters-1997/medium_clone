@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { pagePadding } from "~/styles/utils";
-import { colors } from "~/styles/theme.css";
+import { colors } from "~/styles/theme/theme.css";
 import { media, spacing } from "~/styles/variables.css";
 
 const baseFooterStyles = style([
@@ -16,7 +16,7 @@ export const styles = {
   footerMobile: style([
     baseFooterStyles,
     {
-      background: colors.bg.black,
+      background: colors.bg.tertiary,
       color: colors.text.secondary,
       display: "block",
       "@media": {

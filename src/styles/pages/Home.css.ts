@@ -10,16 +10,14 @@ const styles = {
     flex: 1,
     height: "100%",
   }),
-  heroWrapper: style([
-    {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "space-between",
-      gap: "1.5rem",
-      margin: `0 ${spacing.s5}`,
-      maxWidth: spacing.s15,
-    },
-  ]),
+  heroWrapper: style({
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    gap: "1.5rem",
+    margin: `0 ${spacing.s5}`,
+    maxWidth: spacing.s15,
+  }),
 };
 
 export default styles;

@@ -1,6 +1,6 @@
 import { globalStyle, style } from "@vanilla-extract/css";
 import "~/styles/theme/typography.css";
-import { colors, typograpghy } from "./theme.css";
+import { colors, typograpghy } from "~/styles/theme/theme.css";
 
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
@@ -13,14 +13,22 @@ globalStyle("body", {
   fontFamily: typograpghy.body,
 });
 
-export const styles = {
+const baseStyles = {
   app: style({
     position: "relative",
-    background: colors.bg.primary,
-    minHeight: "100vh",
     display: "flex",
     flexDirection: "column",
+    minHeight: "100vh",
   }),
+};
+
+export const styles = {
+  app: style([
+    baseStyles.app,
+    {
+      background: colors.bg.primary,
+    },
+  ]),
   main: style({
     position: "relative",
     display: "flex",

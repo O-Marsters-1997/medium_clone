@@ -1,5 +1,5 @@
 import { style, styleVariants } from "@vanilla-extract/css";
-import { colors } from "~/styles/theme.css";
+import { colors } from "~/styles/theme/theme.css";
 import { fontSizes, media } from "~/styles/variables.css";
 
 const baseButton = style({

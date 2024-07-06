@@ -9,9 +9,10 @@ type Props = {
   children: ReactNode;
   variant: keyof typeof buttonVariants;
   href?: string;
+  onPress?: () => void;
 };
 
-const MyButton = ({ children, variant, href }: Props) => {
+const MyButton = ({ children, variant, href, onPress }: Props) => {
   if (href !== undefined) {
     return (
       <Link href={href} className={buttonVariants[variant]}>
@@ -20,7 +21,11 @@ const MyButton = ({ children, variant, href }: Props) => {
     );
   }
 
-  return <Button className={buttonVariants[variant]}>{children}</Button>;
+  return (
+    <Button type="submit" className={buttonVariants[variant]} onPress={onPress}>
+      {children}
+    </Button>
+  );
 };
 
 export default MyButton;
