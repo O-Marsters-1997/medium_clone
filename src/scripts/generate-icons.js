@@ -63,7 +63,8 @@ async function run() {
           .replace(/fill-opacity/g, "fillOpacity")
           .replace(/stroke-opacity/g, "strokeOpacity")
           .replace(/stop-color/g, "stopColor")
-          .replace(/stop-opacity/g, "stopOpacity"),
+          .replace(/stop-opacity/g, "stopOpacity")
+          .replace(/stroke-miterlimit/g, "strokeMiterlimit"),
       });
       result.processed.push(iconFileName);
     } catch (error) {
@@ -76,7 +77,7 @@ async function run() {
   }
 
   const iconComponent = [
-    `// WARNING\n`,
+    `// WARNING: auto-generated\n`,
     `//\n`,
     `// Do not make manual changes to this file.\n`,
     `//\n`,
@@ -87,15 +88,14 @@ async function run() {
     `\n\n`,
     `import React from "react";\n`,
     `import { sprinkles } from "~/styles/sprinkles.css";\n`,
-    `import { iconSizes } from "~/styles/variables.css"\n\n`,
+    `import { StyleProps as IconProps } from "~/components/Icon";\n\n`,
     "export type IconDefinition = ",
     icons.map((i) => `'${i.icon}'`).join(" | "),
     `;\n\n`,
-    `type Props ={ color?: string; height: keyof typeof iconSizes; };\n\n`,
     `export const availableIcons: IconDefinition[] = [`,
     icons.map((i) => `'${i.icon}'`).join(", "),
     `];\n\n`,
-    `export const IconSvg: Record<IconDefinition, ({ color, height }: Props) => React.ReactNode> = {\n`,
+    `export const IconSvg: Record<IconDefinition, ({ color, height }: IconProps) => React.ReactNode> = {\n`,
     icons
       .map((i) => {
         const svgWithVariableFillAndStroke = i.svg
@@ -111,7 +111,7 @@ async function run() {
             /(<svg[^>]*?)(>)/g,
             "$1 className={sprinkles({ h: height })}$2",
           );
-        return `'${i.icon}': ({color, height}:Props)=>${svgWithVariableFillAndStroke},\n`;
+        return `'${i.icon}': ({color, height}:IconProps)=>${svgWithVariableFillAndStroke},\n`;
       })
       .join(""),
     `};\n`,

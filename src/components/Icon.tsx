@@ -2,12 +2,15 @@
 
 import React from "react";
 import { IconDefinition, IconSvg } from "../utils/icon/IconSvg";
-import { iconSizes } from "~/styles/variables.css";
+import { colorPalette, iconSizes } from "~/styles/variables.css";
 
-type Props = {
-  icon: IconDefinition;
-  color?: string;
+export type StyleProps = {
+  color?: (typeof colorPalette)[keyof typeof colorPalette];
   height?: keyof typeof iconSizes;
+};
+
+type Props = StyleProps & {
+  icon: IconDefinition;
 };
 
 const Icon = ({ icon, color, height = "md" }: Props) => {

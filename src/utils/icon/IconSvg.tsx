@@ -1,4 +1,4 @@
-// WARNING
+// WARNING: auto-generated
 //
 // Do not make manual changes to this file.
 //
@@ -9,19 +9,17 @@ A list of all available icons in the icon set.
 
 import React from "react";
 import { sprinkles } from "~/styles/sprinkles.css";
-import { iconSizes } from "~/styles/variables.css";
+import { StyleProps as IconProps } from "~/components/Icon";
 
 export type IconDefinition = "search";
-
-type Props = { color?: string; height: keyof typeof iconSizes };
 
 export const availableIcons: IconDefinition[] = ["search"];
 
 export const IconSvg: Record<
   IconDefinition,
-  ({ color, height }: Props) => React.ReactNode
+  ({ color, height }: IconProps) => React.ReactNode
 > = {
-  search: ({ color, height }: Props) => (
+  search: ({ color, height }: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -30,14 +28,14 @@ export const IconSvg: Record<
     >
       <path
         stroke={color ?? "#909090"}
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeWidth="32"
         d="M221.09 64a157.09 157.09 0 1 0 157.09 157.09A157.1 157.1 0 0 0 221.09 64Z"
       />
       <path
         stroke={color ?? "#909090"}
         strokeLinecap="round"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeWidth="32"
         d="M338.29 338.29 448 448"
       />
