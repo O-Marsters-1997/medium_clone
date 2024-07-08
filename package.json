@@ -29,6 +29,7 @@
     "@prisma/adapter-pg": "^5.16.1",
     "@prisma/client": "^5.15.1",
     "@prisma/extension-accelerate": "^1.1.0",
+    "@svgr/cli": "^8.1.0",
     "@types/mdx": "^2.0.10",
     "@vanilla-extract/css": "^1.15.2",
     "@vanilla-extract/next-plugin": "^2.4.1",

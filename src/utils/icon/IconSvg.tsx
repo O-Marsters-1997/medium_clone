@@ -15,10 +15,7 @@ export type IconDefinition = "search";
 
 export const availableIcons: IconDefinition[] = ["search"];
 
-export const IconSvg: Record<
-  IconDefinition,
-  ({ color, height }: IconProps) => React.ReactNode
-> = {
+export const IconSvg = {
   search: ({ color, height }: IconProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"

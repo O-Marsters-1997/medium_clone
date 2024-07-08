@@ -27,7 +27,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/seed/index.cts"
+    "src/seed/index.cts",
+    "src/utils/icon/template.js"
   ],
   "exclude": ["node_modules"]
 }

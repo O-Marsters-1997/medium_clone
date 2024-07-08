@@ -92,9 +92,6 @@ async function run() {
     "export type IconDefinition = ",
     icons.map((i) => `'${i.icon}'`).join(" | "),
     `;\n\n`,
-    `export const availableIcons: IconDefinition[] = [`,
-    icons.map((i) => `'${i.icon}'`).join(", "),
-    `];\n\n`,
     `export const IconSvg: Record<IconDefinition, ({ color, height }: IconProps) => React.ReactNode> = {\n`,
     icons
       .map((i) => {
