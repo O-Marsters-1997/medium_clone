@@ -1,12 +1,12 @@
 "use client";
 
 import React from "react";
+import clsx from "clsx";
 import { useTheme } from "~/context/ThemeContext";
 import { colorPalette, iconSizes } from "~/styles/variables.css";
-import { IconSvg } from "~/components/icon/index";
+import { IconDefinition, IconSvg } from "~/components/icon/index";
+import { styles } from "./Icon.css";
 import { ValueOf } from "~/types";
-
-type IconDefinition = "search";
 
 type IconSize = ValueOf<typeof iconSizes>;
 
@@ -25,9 +25,10 @@ export type StyleProps = {
 
 type Props = StyleProps & {
   icon: IconDefinition;
+  onClick?: () => void;
 };
 
-const Icon = ({ icon, color, height, width }: Props) => {
+const Icon = ({ icon, color, height, width, onClick }: Props) => {
   const { selectedTheme } = useTheme();
 
   const iconColor = color && iconColorMap[color][selectedTheme];
@@ -38,6 +39,8 @@ const Icon = ({ icon, color, height, width }: Props) => {
       color={iconColor}
       height={height ?? iconSizes.md}
       width={width ?? iconSizes.md}
+      className={clsx(onClick && styles.clickable)}
+      onClick={onClick}
     />
   );
 };

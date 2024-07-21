@@ -24,7 +24,7 @@ const emptyFn = () => {};
 
 const ThemeContext = createContext<{
   selectedTheme: Theme;
-  toggleTheme: (target: Theme) => void;
+  toggleTheme: () => void;
 }>({ selectedTheme: "light", toggleTheme: emptyFn });
 
 const themeMap = {
@@ -36,8 +36,8 @@ const ThemeProvider = ({ children }: Props) => {
   const [selectedTheme, setSelectedTheme] = useState<Theme>("light");
   const { user } = useAuth();
 
-  const toggleTheme = (target: Theme) => {
-    setSelectedTheme(target);
+  const toggleTheme = () => {
+    setSelectedTheme(selectedTheme === "light" ? "dark" : "light");
   };
 
   return (

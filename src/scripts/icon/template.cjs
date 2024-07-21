@@ -5,7 +5,7 @@ const template = (variables, { tpl }) => {
 
   jsx.children.forEach((child) => {
     child.openingElement.attributes.forEach((attr) => {
-      if (attr.name.name === "stroke") {
+      if (attr.name.name === "stroke" || attr.name.name === "fill") {
         attr.value.value = "currentColor";
       }
     });

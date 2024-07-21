@@ -6,6 +6,7 @@ import Link from "~/components/Link";
 import { routes } from "~/utils/routes";
 import { getUser } from "~/utils";
 import Icon from "../Icon";
+import ThemeToggle from "~/components/ThemeToggle";
 
 type NavLink = {
   label: string;
@@ -47,6 +48,7 @@ const Header = async () => {
       </div>
       <nav className={styles.navigation}>
         <span>Write</span>
+        <ThemeToggle />
       </nav>
     </div>
   );
