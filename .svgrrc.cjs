@@ -1,8 +1,11 @@
 module.exports = {
-  outDir: "src/dist",
   filenameCase: "camel",
-  outDir: "src/dist",
+  outDir: "src/components/icon",
   ext: "tsx",
-  template: require("./src/utils/icon/template.cjs"),
-  indexTemplate: require("./src/utils/icon/index-template.cjs"),
+  typescript: true,
+  dimensions: false,
+  expandProps: "end",
+  svgProps: { width: "{props.width}", height: "{props.height}" },
+  template: require("./src/scripts/icon/template.cjs"),
+  indexTemplate: require("./src/scripts/icon/index-template.cjs"),
 };

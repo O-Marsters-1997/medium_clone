@@ -7,6 +7,8 @@ export const colorPalette = {
   black: "black",
   btnPrimary: "hsl(0,0%,10%)",
   btnSecondary: "hsl(119,71%,31%)",
+  iconPrimary: "hsl(0,0%,56%)",
+  iconPrimaryDark: "red",
 } as const;
 
 const breakpoints = {
@@ -57,9 +59,9 @@ export const fontSizes = {
 } as const;
 
 export const iconSizes = {
-  sm: "1rem",
-  md: "2rem",
-  lg: "4.5rem",
+  sm: 12,
+  md: 32,
+  lg: 48,
 } as const;
 
 export const spacing = {

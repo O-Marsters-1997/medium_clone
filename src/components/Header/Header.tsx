@@ -6,7 +6,6 @@ import Link from "~/components/Link";
 import { routes } from "~/utils/routes";
 import { getUser } from "~/utils";
 import Icon from "../Icon";
-import Search from "./Search";
 
 type NavLink = {
   label: string;
@@ -44,7 +43,7 @@ const Header = async () => {
     <div className={styles.header}>
       <div className={styles.logoWrapper}>
         <Logo theme="light" />
-        <Search />
+        <Icon icon="search" color="primary" />
       </div>
       <nav className={styles.navigation}>
         <span>Write</span>

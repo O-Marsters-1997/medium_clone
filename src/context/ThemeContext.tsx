@@ -23,8 +23,9 @@ export type Theme = "light" | "dark";
 const emptyFn = () => {};
 
 const ThemeContext = createContext<{
+  selectedTheme: Theme;
   toggleTheme: (target: Theme) => void;
-}>({ toggleTheme: emptyFn });
+}>({ selectedTheme: "light", toggleTheme: emptyFn });
 
 const themeMap = {
   light: lightTheme,
@@ -40,7 +41,7 @@ const ThemeProvider = ({ children }: Props) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ toggleTheme }}>
+    <ThemeContext.Provider value={{ selectedTheme, toggleTheme }}>
       <div className={user === null ? unauthedTheme : themeMap[selectedTheme]}>
         {children}
       </div>
