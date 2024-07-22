@@ -61,8 +61,8 @@ export const fontSizes = {
 } as const;
 
 export const iconSizes = {
-  sm: 12,
-  md: 24,
+  sm: 20,
+  md: 26,
   lg: 48,
 } as const;
 

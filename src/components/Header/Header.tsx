@@ -9,6 +9,8 @@ import { getUser } from "~/utils";
 import ThemeToggle from "~/components/ThemeToggle";
 import Searchbar from "~/components/Searchbar";
 import Avatar from "~/components/Avatar";
+import Text from "~/components/Text";
+import UserSettingsMenu from "~/screens/UserSettingsMenu";
 
 type NavLink = {
   label: string;
@@ -27,18 +29,21 @@ const Header = async () => {
   return (
     <>
       {user && (
-        <div className={styles.header}>
-          <div className={styles.logoWrapper}>
-            <Logo theme="light" />
-            <Searchbar />
+        <div>
+          <div className={styles.header}>
+            <div className={styles.logoWrapper}>
+              <Logo theme="light" />
+              <Searchbar />
+            </div>
+            <nav className={styles.navigation}>
+              <Text variant="navLink">Write</Text>
+              <ThemeToggle />
+              <Avatar user={user && user} />
+            </nav>
           </div>
-          <nav className={styles.navigation}>
-            <span>Write</span>
-            <ThemeToggle />
-            <Avatar user={user && user} />
-          </nav>
         </div>
       )}
+
       {!user && (
         <div className={styles.header}>
           <Logo theme="light" />

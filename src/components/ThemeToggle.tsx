@@ -12,6 +12,7 @@ const ThemeToggle = () => {
       icon={selectedTheme === "light" ? "darkMode" : "lightMode"}
       color="primary"
       onClick={toggleTheme}
+      size="sm"
     />
   );
 };

@@ -7,6 +7,8 @@ import { styles } from "~/styles/globals.css";
 import { auth } from "~/auth";
 import { ReactNode } from "react";
 import AuthProvider from "~/context/AuthContext";
+import UserSettingsMenu from "~/screens/UserSettingsMenu";
+import { getUser } from "~/utils";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -18,7 +20,9 @@ type LayoutProps = Readonly<{
   children: React.ReactNode;
 }>;
 
-const RootLayout = ({ children }: LayoutProps) => {
+const RootLayout = async ({ children }: LayoutProps) => {
+  const user = await getUser();
+
   return (
     <html lang="en" className={lato.className}>
       <body>
@@ -28,6 +32,7 @@ const RootLayout = ({ children }: LayoutProps) => {
             <div id="app" className={styles.app}>
               <div className={styles.main}>
                 <Header />
+                {user && <UserSettingsMenu user={user} />}
                 {children}
                 <Footer />
               </div>

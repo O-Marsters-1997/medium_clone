@@ -8,7 +8,7 @@ const { primary, white, black, btnPrimary, btnSecondary, grey } = colorPalette;
 const baseStyles = {
   typograpghy: {
     heading: `${fonts.heading}, Georgia, Cambria, "Times New Roman", Times, serif`,
-    body: `${fonts.body}, serif, Roboto, Helvetica, Arial, sans-serif`,
+    body: `${fonts.body}, Roboto, Helvetica, Arial, sans-serif`,
   },
 };
 

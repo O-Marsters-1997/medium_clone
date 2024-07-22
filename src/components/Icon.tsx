@@ -6,9 +6,12 @@ import { useTheme } from "~/context/ThemeContext";
 import { colorPalette, iconSizes } from "~/styles/variables.css";
 import { IconDefinition, IconSvg } from "~/components/icon/index";
 import { styles } from "./styles/Icon.css";
-import { ValueOf } from "~/types";
 
-type IconSize = ValueOf<typeof iconSizes>;
+type IconSizeVariant = keyof typeof iconSizes;
+
+type IconSizeVariantMap = { height: IconSizeVariant; width: IconSizeVariant };
+
+type ValidIconSizePropOption = IconSizeVariant | IconSizeVariantMap;
 
 const iconColorMap = {
   primary: {
@@ -19,8 +22,7 @@ const iconColorMap = {
 
 export type StyleProps = {
   color?: keyof typeof iconColorMap;
-  width?: IconSize;
-  height?: IconSize;
+  size?: ValidIconSizePropOption;
 };
 
 type Props = StyleProps & {
@@ -28,17 +30,46 @@ type Props = StyleProps & {
   onClick?: () => void;
 };
 
-const Icon = ({ icon, color, height, width, onClick }: Props) => {
+const getDimensions = (size?: ValidIconSizePropOption): IconSizeVariantMap => {
+  const baseDimensions: IconSizeVariantMap = {
+    height: "md",
+    width: "md",
+  };
+
+  if (!size) return baseDimensions;
+
+  const isIconSize = (
+    size: ValidIconSizePropOption,
+  ): size is IconSizeVariant => {
+    return typeof size === "string";
+  };
+
+  if (isIconSize(size)) {
+    return {
+      height: size,
+      width: size,
+    };
+  }
+
+  return {
+    height: size.height ?? baseDimensions.height,
+    width: size.width ?? baseDimensions.width,
+  };
+};
+
+const Icon = ({ icon, color, size, onClick }: Props) => {
   const { selectedTheme } = useTheme();
 
   const iconColor = color && iconColorMap[color][selectedTheme];
   const SvgIcon = IconSvg[icon];
 
+  const { height, width } = getDimensions(size);
+
   return (
     <SvgIcon
       color={iconColor}
-      height={height ?? iconSizes.md}
-      width={width ?? iconSizes.md}
+      height={iconSizes[height]}
+      width={iconSizes[width]}
       className={clsx(onClick && styles.clickable)}
       onClick={onClick}
     />
