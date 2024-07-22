@@ -3,7 +3,7 @@
 import React, { type ReactNode } from "react";
 import { Button } from "react-aria-components";
 import Link from "next/link";
-import { buttonVariants } from "./Button.css";
+import { buttonVariants } from "./styles/Button.css";
 
 type Props = {
   children: ReactNode;

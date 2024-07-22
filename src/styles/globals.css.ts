@@ -1,17 +1,8 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { style } from "@vanilla-extract/css";
 import "~/styles/theme/typography.css";
-import { colors, typograpghy } from "~/styles/theme/theme.css";
-
-globalStyle("*, *::before, *::after", {
-  boxSizing: "border-box",
-  margin: 0,
-});
-
-globalStyle("body", {
-  margin: 0,
-  fontSize: "12px",
-  fontFamily: typograpghy.body,
-});
+import { colors } from "~/styles/theme/theme.css";
+import "~/styles/base/index.css";
+import "~/styles/components/index.css";
 
 const baseStyles = {
   app: style({

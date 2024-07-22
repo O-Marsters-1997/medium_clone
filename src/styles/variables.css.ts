@@ -8,7 +8,9 @@ export const colorPalette = {
   btnPrimary: "hsl(0,0%,10%)",
   btnSecondary: "hsl(119,71%,31%)",
   iconPrimary: "hsl(0,0%,56%)",
-  iconPrimaryDark: "red",
+  iconPrimaryDark: "hsl(0,0%,56%)",
+  grey: "hsl(0, 0%, 98%)",
+  greenPrimary: "hsl(119,71%,31%)",
 } as const;
 
 const breakpoints = {
@@ -60,7 +62,7 @@ export const fontSizes = {
 
 export const iconSizes = {
   sm: 12,
-  md: 32,
+  md: 24,
   lg: 48,
 } as const;
 

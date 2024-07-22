@@ -17,8 +17,13 @@ export const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    gap: "1rem",
   }),
   navigation: style({
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "2rem",
     marginLeft: "auto",
   }),
   navList: style({

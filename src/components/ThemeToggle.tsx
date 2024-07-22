@@ -10,6 +10,7 @@ const ThemeToggle = () => {
   return (
     <Icon
       icon={selectedTheme === "light" ? "darkMode" : "lightMode"}
+      color="primary"
       onClick={toggleTheme}
     />
   );

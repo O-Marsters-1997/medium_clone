@@ -1,5 +1,5 @@
 import React from "react";
-import { styles } from "~/components/Logo.css";
+import { styles } from "~/components/styles/Logo.css";
 import { colorPalette } from "~/styles/variables.css";
 
 type Props = {

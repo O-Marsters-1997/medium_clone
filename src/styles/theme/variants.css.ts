@@ -3,7 +3,7 @@ import { colorPalette } from "~/styles/variables.css";
 import { fonts } from "~/styles/base/fontFace.css";
 import { vars } from "~/styles/theme/theme.css";
 
-const { primary, white, black, btnPrimary, btnSecondary } = colorPalette;
+const { primary, white, black, btnPrimary, btnSecondary, grey } = colorPalette;
 
 const baseStyles = {
   typograpghy: {
@@ -28,6 +28,9 @@ export const lightTheme = createTheme(vars, {
       primary: btnPrimary,
       secondary: btnSecondary,
     },
+    muted: {
+      primary: grey,
+    },
   },
 });
 
@@ -47,6 +50,9 @@ export const darkTheme = createTheme(vars, {
       primary: btnPrimary,
       secondary: btnSecondary,
     },
+    muted: {
+      primary: grey,
+    },
   },
 });
 
@@ -65,6 +71,9 @@ export const unauthedTheme = createTheme(vars, {
     button: {
       primary: btnPrimary,
       secondary: btnSecondary,
+    },
+    muted: {
+      primary: grey,
     },
   },
 });

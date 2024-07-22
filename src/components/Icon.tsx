@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { useTheme } from "~/context/ThemeContext";
 import { colorPalette, iconSizes } from "~/styles/variables.css";
 import { IconDefinition, IconSvg } from "~/components/icon/index";
-import { styles } from "./Icon.css";
+import { styles } from "./styles/Icon.css";
 import { ValueOf } from "~/types";
 
 type IconSize = ValueOf<typeof iconSizes>;

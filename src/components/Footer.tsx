@@ -1,5 +1,5 @@
 import React from "react";
-import { styles } from "~/components/Footer.css";
+import { styles } from "~/components/styles/Footer.css";
 import Logo from "~/components/Logo";
 
 const FooterBlack = () => {

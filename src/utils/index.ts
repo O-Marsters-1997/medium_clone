@@ -1,6 +1,12 @@
 import { auth } from "~/auth";
+import { logger } from "~/utils/logger";
 
 export const getUser = async () => {
-  const session = await auth();
-  return session?.user ?? null;
+  try {
+    const session = await auth();
+
+    return session?.user ?? null;
+  } catch (err) {
+    logger.error(err);
+  }
 };

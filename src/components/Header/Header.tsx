@@ -5,8 +5,10 @@ import Logo from "../Logo";
 import Link from "~/components/Link";
 import { routes } from "~/utils/routes";
 import { getUser } from "~/utils";
-import Icon from "../Icon";
+
 import ThemeToggle from "~/components/ThemeToggle";
+import Searchbar from "~/components/Searchbar";
+import Avatar from "~/components/Avatar";
 
 type NavLink = {
   label: string;
@@ -22,38 +24,44 @@ const Header = async () => {
     { label: "Sign in", url: routes.login },
   ];
 
-  const UnauthedHeader = (
-    <div className={styles.header}>
-      <Logo theme="light" />
-      <nav className={styles.navigation}>
-        <ul className={styles.navList}>
-          {navLinks.map((link, index) => (
-            <Link href={link.url} key={index} className={styles.navListItem}>
-              {link.label}
-            </Link>
-          ))}
-          <Button variant="primary" href={routes.login}>
-            Get started
-          </Button>
-        </ul>
-      </nav>
-    </div>
+  return (
+    <>
+      {user && (
+        <div className={styles.header}>
+          <div className={styles.logoWrapper}>
+            <Logo theme="light" />
+            <Searchbar />
+          </div>
+          <nav className={styles.navigation}>
+            <span>Write</span>
+            <ThemeToggle />
+            <Avatar user={user && user} />
+          </nav>
+        </div>
+      )}
+      {!user && (
+        <div className={styles.header}>
+          <Logo theme="light" />
+          <nav className={styles.navigation}>
+            <ul className={styles.navList}>
+              {navLinks.map((link, index) => (
+                <Link
+                  href={link.url}
+                  key={index}
+                  className={styles.navListItem}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Button variant="primary" href={routes.login}>
+                Get started
+              </Button>
+            </ul>
+          </nav>
+        </div>
+      )}
+    </>
   );
-
-  const AuthedHeader = (
-    <div className={styles.header}>
-      <div className={styles.logoWrapper}>
-        <Logo theme="light" />
-        <Icon icon="search" color="primary" />
-      </div>
-      <nav className={styles.navigation}>
-        <span>Write</span>
-        <ThemeToggle />
-      </nav>
-    </div>
-  );
-
-  return user === null ? UnauthedHeader : AuthedHeader;
 };
 
 export default Header;

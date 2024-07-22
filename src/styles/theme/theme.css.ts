@@ -15,6 +15,9 @@ export const vars = createThemeContract({
       primary: "",
       secondary: "",
     },
+    muted: {
+      primary: "",
+    },
   },
   typograpghy: {
     heading: "",

@@ -2,10 +2,9 @@ import React from "react";
 import Link from "~/components/Link";
 import { routes } from "~/utils/routes";
 import { styles } from "~/screens/login/LoginModal.css";
-import { signIn, providerMap, Provider } from "~/auth";
+import { signIn, providerMap } from "~/auth";
 import { AuthError } from "next-auth";
 import Button from "~/components/Button";
-import Modal from "~/components/Modal";
 import { redirect } from "next/navigation";
 import { logger } from "~/utils/logger";
 
