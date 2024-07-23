@@ -7,40 +7,38 @@ import React, {
   type ReactNode,
 } from "react";
 import { Session, User } from "next-auth";
+import { useSearchParams, useRouter } from "next/navigation";
+import { routes } from "~/utils/routes";
+import { useGetSearchParams } from "~/hooks/navigation";
 
 type Props = {
   session: Session | null;
   children: ReactNode;
 };
 
-const emptyFn = () => {};
-
 const AuthContext = createContext<{
   user: User | null;
-  showUserSettings: boolean;
-  toggleUserSettingsVisibility: () => void;
 }>({
   user: null,
-  showUserSettings: false,
-  toggleUserSettingsVisibility: emptyFn,
 });
 
 const AuthProvider = ({ session, children }: Props) => {
-  const [showUserSettings, setShowUserSettings] = useState(false);
+  const router = useRouter();
+  const searchParams = useGetSearchParams("user_settings");
 
-  const toggleUserSettingsVisibility = () => {
-    setShowUserSettings(!showUserSettings);
+  const handleUserSettingsClose = () => {
+    if (searchParams !== null) {
+      router.push(routes.home);
+    }
   };
 
   return (
     <AuthContext.Provider
       value={{
         user: session?.user ?? null,
-        showUserSettings,
-        toggleUserSettingsVisibility,
       }}
     >
-      {children}
+      <div onClick={handleUserSettingsClose}>{children}</div>
     </AuthContext.Provider>
   );
 };

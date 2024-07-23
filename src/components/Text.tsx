@@ -19,6 +19,7 @@ const textVariantsMap: Record<
   h2: "h2",
   h3: "h3",
   navLink: "a",
+  subtitle: "span",
 };
 
 const Text = ({ variant, children }: Props) => {

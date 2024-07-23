@@ -16,7 +16,7 @@
     "prisma:deploy": "prisma migrate deploy",
     "prisma:reset": "prisma migrate reset",
     "postinstall": "bun generate",
-    "generate:icons": "@svgr/cli -- src/assets/icons"
+    "generate:icons": "@svgr/cli -- ./src/assets/icons"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.4.1",

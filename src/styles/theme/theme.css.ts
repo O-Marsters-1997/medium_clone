@@ -10,6 +10,7 @@ export const vars = createThemeContract({
     text: {
       primary: "",
       secondary: "",
+      muted: "",
     },
     button: {
       primary: "",
@@ -17,6 +18,7 @@ export const vars = createThemeContract({
     },
     muted: {
       primary: "",
+      bold: "",
     },
   },
   typograpghy: {

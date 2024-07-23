@@ -1,5 +1,6 @@
 import { globalStyle } from "@vanilla-extract/css";
-import { typograpghy } from "~/styles/theme/theme.css";
+import { colors, typograpghy } from "~/styles/theme/theme.css";
+import { colorPalette } from "~/styles/variables.css";
 
 globalStyle("*, *::before, *::after", {
   boxSizing: "border-box",
@@ -10,4 +11,10 @@ globalStyle("body", {
   margin: 0,
   fontSize: "12px",
   fontFamily: typograpghy.body,
+});
+
+globalStyle("hr", {
+  border: "none",
+  height: "1px",
+  background: colors.muted.primary,
 });

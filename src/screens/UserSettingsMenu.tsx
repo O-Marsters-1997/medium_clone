@@ -2,10 +2,16 @@
 
 import { User } from "next-auth";
 import React from "react";
+import { useSearchParams, usePathname } from "next/navigation";
+import Link from "next/link";
 import { ListBox, ListBoxItem } from "react-aria-components";
 import Icon from "~/components/Icon";
+import Text from "~/components/Text";
 import { IconDefinition } from "~/components/icon/index";
 import { useAuth } from "~/context/AuthContext";
+import { styles } from "~/screens/Settings.css";
+import { sprinkles } from "~/styles/sprinkles.css";
+import { spacing } from "~/styles/variables.css";
 
 type Props = {
   user: User;
@@ -14,12 +20,15 @@ type Props = {
 type UserSettingsMenuItem = { icon?: IconDefinition; text: string };
 
 const UserSettingsMenu = ({ user }: Props) => {
+  const searchParams = useSearchParams();
+  const settings = searchParams.get("user_settings");
+
   const userSettings: UserSettingsMenuItem[][] = [
     [
-      { icon: "darkMode", text: "Profile" },
-      { icon: "darkMode", text: "Library" },
-      { icon: "darkMode", text: "Stories" },
-      { icon: "darkMode", text: "Stats" },
+      { icon: "profile", text: "Profile" },
+      { icon: "bookmark", text: "Library" },
+      { icon: "story", text: "Stories" },
+      { icon: "stats", text: "Stats" },
     ],
     [
       { text: "Settings" },
@@ -31,36 +40,40 @@ const UserSettingsMenu = ({ user }: Props) => {
     [{ text: "Sign out" }],
   ];
 
-  const { showUserSettings } = useAuth();
-
-  if (!showUserSettings) {
-    return <></>;
-  }
-
   return (
-    <div>
-      <ListBox>
-        {userSettings.map((group, index) => {
-          console.log(group.length);
-          return (
-            <ListBoxItem key={index}>
-              <div key={index}>
-                {group.map(({ text, icon }, index) => {
-                  console.log(index, group.length - 1);
-                  return (
-                    <div key={index}>
-                      {icon && <Icon icon={icon} size={"sm"} />}
-                      <span>{text}</span>
-                    </div>
-                  );
-                })}
-                {index !== userSettings.length - 1 && <hr />}
-              </div>
-            </ListBoxItem>
-          );
-        })}
-      </ListBox>
-    </div>
+    <>
+      {settings && (
+        <div>
+          <ListBox className={styles.userSettingsContainer}>
+            {userSettings.map((group, index) => {
+              return (
+                <ListBoxItem key={index}>
+                  <div className={styles.settingGroup} key={index}>
+                    {group.map(({ text, icon }, index) => {
+                      return (
+                        <div key={index} className={styles.settingItem}>
+                          {icon && (
+                            <Icon icon={icon} size={"sm"} color="primary" />
+                          )}
+                          <Text variant="subtitle">{text}</Text>
+                        </div>
+                      );
+                    })}
+                  </div>
+                  {index !== userSettings.length - 1 && (
+                    <hr
+                      className={sprinkles({
+                        my: "s1",
+                      })}
+                    />
+                  )}
+                </ListBoxItem>
+              );
+            })}
+          </ListBox>
+        </div>
+      )}
+    </>
   );
 };
 

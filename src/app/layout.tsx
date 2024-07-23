@@ -1,4 +1,5 @@
 import { Lato } from "next/font/google";
+import { redirect } from "next/navigation";
 import { LocalizedStringProvider } from "react-aria-components/i18n";
 import ThemeProvider from "~/context/ThemeContext";
 import Header from "~/components/Header/Header";
@@ -9,6 +10,8 @@ import { ReactNode } from "react";
 import AuthProvider from "~/context/AuthContext";
 import UserSettingsMenu from "~/screens/UserSettingsMenu";
 import { getUser } from "~/utils";
+import { routes } from "~/utils/routes";
+import Link from "next/link";
 
 const lato = Lato({
   subsets: ["latin"],

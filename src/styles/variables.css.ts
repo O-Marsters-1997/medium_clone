@@ -9,7 +9,10 @@ export const colorPalette = {
   btnSecondary: "hsl(119,71%,31%)",
   iconPrimary: "hsl(0,0%,56%)",
   iconPrimaryDark: "hsl(0,0%,56%)",
-  grey: "hsl(0, 0%, 98%)",
+  grey: "hsl(0, 0%, 95%)",
+  greyDarker: "hsl(0, 0%, 76%)",
+  greyDark: "hsl(0, 0%, 42%)",
+  greyDarkest: "hsl(0, 0%, 44%)",
   greenPrimary: "hsl(119,71%,31%)",
 } as const;
 
@@ -58,12 +61,20 @@ export const fontSizes = {
       },
     },
   }),
+  subtitle: style({
+    fontSize: ".95rem",
+  }),
 } as const;
 
 export const iconSizes = {
   sm: 20,
   md: 26,
   lg: 48,
+} as const;
+
+export const heightsAndWidths = {
+  "x-px": ".1px",
+  "x-1": "0.125rem",
 } as const;
 
 export const spacing = {

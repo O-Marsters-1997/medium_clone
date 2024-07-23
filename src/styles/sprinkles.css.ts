@@ -1,5 +1,10 @@
 import { defineProperties, createSprinkles } from "@vanilla-extract/sprinkles";
-import { colorPalette, spacing, media, iconSizes } from "./variables.css";
+import {
+  colorPalette,
+  spacing,
+  media,
+  heightsAndWidths,
+} from "./variables.css";
 
 const responsiveProperties = defineProperties({
   conditions: {
@@ -27,8 +32,13 @@ const responsiveProperties = defineProperties({
     paddingBottom: spacing,
     paddingLeft: spacing,
     paddingRight: spacing,
-    height: iconSizes,
-    width: iconSizes,
+    margin: spacing,
+    marginTop: spacing,
+    marginBottom: spacing,
+    marginLeft: spacing,
+    marginRight: spacing,
+    height: heightsAndWidths,
+    width: heightsAndWidths,
   },
   shorthands: {
     // Spacing
@@ -39,6 +49,13 @@ const responsiveProperties = defineProperties({
     pr: ["paddingRight"],
     pb: ["paddingBottom"],
     pl: ["paddingLeft"],
+    m: ["marginTop", "marginRight", "marginBottom", "marginLeft"],
+    mx: ["marginLeft", "marginRight"],
+    my: ["marginTop", "marginBottom"],
+    mt: ["marginTop"],
+    mr: ["marginRight"],
+    mb: ["marginBottom"],
+    ml: ["marginLeft"],
     h: ["height"],
     w: ["width"],
   },

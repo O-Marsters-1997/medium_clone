@@ -36,5 +36,6 @@ export const textVariants = styleVariants({
       lineHeight: "1.75rem",
     },
   ],
+  subtitle: [body, fontSizes.subtitle],
   navLink: [body, fontSizes.interactive],
 });
