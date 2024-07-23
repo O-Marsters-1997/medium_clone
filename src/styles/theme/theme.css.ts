@@ -3,12 +3,20 @@ import { createThemeContract } from "@vanilla-extract/css";
 export const vars = createThemeContract({
   colors: {
     bg: {
-      primary: "",
+      primary: {
+        main: "",
+      },
       secondary: "",
-      tertiary: null,
+      tertiary: {
+        main: "",
+        transparent: "",
+      },
     },
     text: {
-      primary: "",
+      primary: {
+        main: "",
+        bold: "",
+      },
       secondary: "",
       muted: "",
     },
@@ -25,6 +33,9 @@ export const vars = createThemeContract({
     heading: "",
     body: "",
   },
+  utils: {
+    boxShadow: "",
+  },
 });
 
-export const { colors, typograpghy } = vars;
+export const { colors, typograpghy, utils } = vars;

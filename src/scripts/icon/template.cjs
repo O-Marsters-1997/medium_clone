@@ -1,11 +1,19 @@
 const t = require("@babel/types");
 
 const template = (variables, { tpl }) => {
-  const { jsx } = variables;
+  const { jsx, componentName } = variables;
+  const excludedIconsFromStyleOverides = ["google", "facebook"];
 
   jsx.children.forEach((child) => {
     child.openingElement.attributes.forEach((attr) => {
-      if (attr.name.name === "stroke" || attr.name.name === "fill") {
+      const isExcluded = excludedIconsFromStyleOverides.some((iconName) =>
+        componentName.toLowerCase().includes(iconName),
+      );
+
+      if (
+        (attr.name.name === "stroke" || attr.name.name === "fill") &&
+        !isExcluded
+      ) {
         attr.value.value = "currentColor";
       }
     });

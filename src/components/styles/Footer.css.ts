@@ -16,7 +16,7 @@ export const styles = {
   footerMobile: style([
     baseFooterStyles,
     {
-      background: colors.bg.tertiary,
+      background: colors.bg.secondary,
       color: colors.text.secondary,
       display: "block",
       "@media": {

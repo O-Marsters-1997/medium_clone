@@ -4,15 +4,22 @@ const headingFont = "Noto Serif Display";
 const bodyFont = "Lato";
 
 globalFontFace(headingFont, {
-  src: "url('/fonts/noto-serif-display-v24-latin-500.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-500.ttf') format('truetype')",
+  src: "url('/fonts/noto-serif-display-v24-latin-regular.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-regular.ttf') format('truetype')",
   fontWeight: "normal",
   fontStyle: "normal",
   fontDisplay: "swap",
 });
 
 globalFontFace(headingFont, {
+  src: "url('/fonts/noto-serif-display-v24-latin-500.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-500.ttf') format('truetype')",
+  fontWeight: 500,
+  fontStyle: "normal",
+  fontDisplay: "swap",
+});
+
+globalFontFace(headingFont, {
   src: "url('/fonts/noto-serif-display-v24-latin-500italic.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-500italic.ttf') format('truetype')",
-  fontWeight: "normal",
+  fontWeight: 500,
   fontStyle: "italic",
   fontDisplay: "swap",
 });

@@ -4,7 +4,9 @@ export const colorPalette = {
   primary: "hsl(47,33%,95%)",
   bold: "red",
   white: "white",
+  whiteTransparent: "rgba(255, 255, 255, 0.8)",
   black: "black",
+  offBlack: "hsl(0, 0%, 13%)",
   btnPrimary: "hsl(0,0%,10%)",
   btnSecondary: "hsl(119,71%,31%)",
   iconPrimary: "hsl(0,0%,56%)",
@@ -12,7 +14,7 @@ export const colorPalette = {
   grey: "hsl(0, 0%, 95%)",
   greyDarker: "hsl(0, 0%, 76%)",
   greyDark: "hsl(0, 0%, 42%)",
-  greyDarkest: "hsl(0, 0%, 44%)",
+  greyDarkest: "hsl(0, 0%, 37%)",
   greenPrimary: "hsl(119,71%,31%)",
 } as const;
 

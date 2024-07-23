@@ -17,7 +17,7 @@ export const styles = {
   app: style([
     baseStyles.app,
     {
-      background: colors.bg.primary,
+      background: colors.bg.primary.main,
     },
   ]),
   main: style({
@@ -28,6 +28,6 @@ export const styles = {
   }),
   link: style({
     textDecoration: "none",
-    color: colors.text.primary,
+    color: colors.text.primary.main,
   }),
 };

@@ -5,14 +5,14 @@ import authConfig from "~/auth.config";
 import { routes } from "~/utils/routes";
 
 export type Provider = {
-  id: string;
+  id: "google" | "facebook";
   name: string;
 };
 
 export const providerMap = authConfig.providers.map((provider) => {
   if (typeof provider === "function") {
     const providerData = provider();
-    return { id: providerData.id, name: providerData.name };
+    return { id: providerData.id, name: providerData.name } as Provider;
   } else {
     return { id: provider.id, name: provider.name } as Provider;
   }

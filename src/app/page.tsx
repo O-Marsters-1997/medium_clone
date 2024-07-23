@@ -10,9 +10,7 @@ type Props = {
   searchParams: Record<string, string> | null | undefined;
 };
 
-const Home = async ({ searchParams }: Props) => {
-  const user = await getUser();
-
+const Home = ({ searchParams }: Props) => {
   const showModal = !!searchParams?.modal;
   const { heroContainer, heroWrapper } = pageStyles;
 

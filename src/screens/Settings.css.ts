@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { colors } from "~/styles/theme/theme.css";
+import { colors, utils } from "~/styles/theme/theme.css";
 import { spacing } from "~/styles/variables.css";
 
 export const styles = {
@@ -7,8 +7,8 @@ export const styles = {
     position: "absolute",
     top: "11%",
     right: "2.5%",
-    background: colors.bg.primary,
-    boxShadow: "2px 6px 21px -2px rgba(0,0,0,0.25)",
+    background: colors.bg.primary.main,
+    boxShadow: utils.boxShadow,
   }),
   settingGroup: style({
     display: "flex",

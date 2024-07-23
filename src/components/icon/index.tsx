@@ -10,6 +10,10 @@ import { default as bookmark } from "./bookmark";
 
 import { default as darkMode } from "./darkMode";
 
+import { default as facebook } from "./facebook";
+
+import { default as google } from "./google";
+
 import { default as lightMode } from "./lightMode";
 
 import { default as profile } from "./profile";
@@ -23,6 +27,8 @@ import { default as story } from "./story";
 export type IconDefinition =
   | "bookmark"
   | "darkMode"
+  | "facebook"
+  | "google"
   | "lightMode"
   | "profile"
   | "search"
@@ -32,6 +38,8 @@ export type IconDefinition =
 export const IconSvg = {
   bookmark,
   darkMode,
+  facebook,
+  google,
   lightMode,
   profile,
   search,

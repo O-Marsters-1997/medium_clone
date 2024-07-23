@@ -6,12 +6,15 @@ import { vars } from "~/styles/theme/theme.css";
 const {
   primary,
   white,
+  whiteTransparent,
   black,
+  offBlack,
   btnPrimary,
   btnSecondary,
   grey,
   greyDarker,
   greyDark,
+  greyDarkest,
 } = colorPalette;
 
 const baseStyles = {
@@ -19,18 +22,29 @@ const baseStyles = {
     heading: `${fonts.heading}, Georgia, Cambria, "Times New Roman", Times, serif`,
     body: `${fonts.body}, Roboto, Helvetica, Arial, sans-serif`,
   },
+  utils: {
+    boxShadow: "2px 6px 21px -2px rgba(0,0,0,0.25)",
+  },
 };
 
 export const lightTheme = createTheme(vars, {
   ...baseStyles,
   colors: {
     bg: {
-      primary: white,
+      primary: {
+        main: white,
+      },
       secondary: primary,
-      tertiary: "",
+      tertiary: {
+        main: white,
+        transparent: whiteTransparent,
+      },
     },
     text: {
-      primary: black,
+      primary: {
+        main: offBlack,
+        bold: black,
+      },
       secondary: white,
       muted: greyDark,
     },
@@ -49,12 +63,20 @@ export const darkTheme = createTheme(vars, {
   ...baseStyles,
   colors: {
     bg: {
-      primary: white,
+      primary: {
+        main: white,
+      },
       secondary: primary,
-      tertiary: "",
+      tertiary: {
+        main: white,
+        transparent: whiteTransparent,
+      },
     },
     text: {
-      primary: black,
+      primary: {
+        main: offBlack,
+        bold: black,
+      },
       secondary: white,
       muted: greyDark,
     },
@@ -73,12 +95,20 @@ export const unauthedTheme = createTheme(vars, {
   ...baseStyles,
   colors: {
     bg: {
-      primary: primary,
-      secondary: primary,
-      tertiary: black,
+      primary: {
+        main: primary,
+      },
+      secondary: black,
+      tertiary: {
+        main: white,
+        transparent: whiteTransparent,
+      },
     },
     text: {
-      primary: black,
+      primary: {
+        main: offBlack,
+        bold: black,
+      },
       secondary: white,
       muted: greyDark,
     },

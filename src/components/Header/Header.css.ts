@@ -10,7 +10,7 @@ export const styles = {
       display: "flex",
       justifyContent: "flex-start",
       alignItems: "center",
-      borderBottom: `1px solid ${colors.text.primary}`,
+      borderBottom: `1px solid ${colors.text.primary.bold}`,
     },
   ]),
   logoWrapper: style({

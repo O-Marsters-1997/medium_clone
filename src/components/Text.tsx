@@ -1,13 +1,15 @@
 import React, { type ReactNode } from "react";
+import clsx from "clsx";
 import { textVariants } from "~/styles/theme/typography.css";
+
+type TextElementProps = {
+  className: string;
+};
 
 type Props = {
   variant: keyof typeof textVariants;
   children: ReactNode;
-};
-
-type TextElementProps = {
-  className: string;
+  className?: string;
 };
 
 const textVariantsMap: Record<
@@ -19,15 +21,18 @@ const textVariantsMap: Record<
   h1: "h1",
   h2: "h2",
   h3: "h3",
+  h4: "h4",
   navLink: "a",
   subtitle: "span",
 };
 
-const Text = ({ variant, children }: Props) => {
+const Text = ({ variant, children, className }: Props) => {
   const TextElement = textVariantsMap[variant];
 
   return (
-    <TextElement className={textVariants[variant]}>{children}</TextElement>
+    <TextElement className={clsx(textVariants[variant], className)}>
+      {children}
+    </TextElement>
   );
 };
 
