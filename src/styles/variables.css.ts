@@ -37,11 +37,22 @@ export const fontSizes = {
   bodySm: ".8rem",
   body: "1rem",
   bodyLg: "1.2rem",
-  h2: style({
+  h1: style({
     fontSize: "3.5rem",
     "@media": {
       [media.lg]: {
         fontSize: "5.65rem",
+      },
+    },
+  }),
+  h2: style({
+    fontSize: "3.5rem",
+    "@media": {
+      [media.md]: {
+        fontSize: "4rem",
+      },
+      [media.lg]: {
+        fontSize: "4.5rem",
       },
     },
   }),

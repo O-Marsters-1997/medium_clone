@@ -1,15 +1,7 @@
 "use client";
 
-import React, {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from "react";
+import React, { createContext, useContext, type ReactNode } from "react";
 import { Session, User } from "next-auth";
-import { useSearchParams, useRouter } from "next/navigation";
-import { routes } from "~/utils/routes";
-import { useGetSearchParams } from "~/hooks/navigation";
 
 type Props = {
   session: Session | null;
@@ -23,22 +15,13 @@ const AuthContext = createContext<{
 });
 
 const AuthProvider = ({ session, children }: Props) => {
-  const router = useRouter();
-  const searchParams = useGetSearchParams("user_settings");
-
-  const handleUserSettingsClose = () => {
-    if (searchParams !== null) {
-      router.push(routes.home);
-    }
-  };
-
   return (
     <AuthContext.Provider
       value={{
         user: session?.user ?? null,
       }}
     >
-      <div onClick={handleUserSettingsClose}>{children}</div>
+      {children}
     </AuthContext.Provider>
   );
 };

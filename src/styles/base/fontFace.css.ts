@@ -1,32 +1,46 @@
 import { globalFontFace } from "@vanilla-extract/css";
 
-const headingFont = "Playfair Display";
+const headingFont = "Noto Serif Display";
 const bodyFont = "Lato";
 
 globalFontFace(headingFont, {
-  src: "url('/fonts/playfair-display-600.woff2') format('woff2'), url('/fonts/playfair-display-600.ttf') format('truetype')",
+  src: "url('/fonts/noto-serif-display-v24-latin-500.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-500.ttf') format('truetype')",
   fontWeight: "normal",
   fontStyle: "normal",
   fontDisplay: "swap",
 });
 
 globalFontFace(headingFont, {
-  src: "url('/fonts/playfair-display-600italic.woff2') format('woff2'), url('/fonts/playfair-display-600italic.ttf') format('truetype')",
+  src: "url('/fonts/noto-serif-display-v24-latin-500italic.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-500italic.ttf') format('truetype')",
   fontWeight: "normal",
   fontStyle: "italic",
   fontDisplay: "swap",
 });
 
 globalFontFace(headingFont, {
-  src: "url('/fonts/playfair-display-700.woff2') format('woff2'), url('/fonts/playfair-display-700.ttf') format('truetype')",
-  fontWeight: "bold",
+  src: "url('/fonts/noto-serif-display-v24-latin-600.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-600.ttf') format('truetype')",
+  fontWeight: 600,
   fontStyle: "normal",
   fontDisplay: "swap",
 });
 
 globalFontFace(headingFont, {
-  src: "url('/fonts/playfair-display-700italic.woff2') format('woff2'), url('/fonts/playfair-display-700italic.ttf') format('truetype')",
-  fontWeight: "normal",
+  src: "url('/fonts/noto-serif-display-v24-latin-600italic.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-600italic.ttf') format('truetype')",
+  fontWeight: 600,
+  fontStyle: "italic",
+  fontDisplay: "swap",
+});
+
+globalFontFace(headingFont, {
+  src: "url('/fonts/noto-serif-display-v24-latin-700.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-700.ttf') format('truetype')",
+  fontWeight: 700,
+  fontStyle: "normal",
+  fontDisplay: "swap",
+});
+
+globalFontFace(headingFont, {
+  src: "url('/fonts/noto-serif-display-v24-latin-700italic.woff2') format('woff2'), url('/fonts/noto-serif-display-v24-latin-700italic.ttf') format('truetype')",
+  fontWeight: 700,
   fontStyle: "italic",
   fontDisplay: "swap",
 });

@@ -12,7 +12,6 @@ const {
   grey,
   greyDarker,
   greyDark,
-  greyDarkest,
 } = colorPalette;
 
 const baseStyles = {

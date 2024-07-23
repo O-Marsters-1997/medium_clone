@@ -26,7 +26,6 @@ const Home = async ({ searchParams }: Props) => {
         <Button href={routes.login} variant="secondary">
           Start Reading
         </Button>
-        {`${user && user.name} is logged in`}
       </div>
       {showModal && <LoginModal />}
     </main>

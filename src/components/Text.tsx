@@ -16,6 +16,7 @@ const textVariantsMap: Record<
 > = {
   body1: "span",
   body2: "span",
+  h1: "h1",
   h2: "h2",
   h3: "h3",
   navLink: "a",

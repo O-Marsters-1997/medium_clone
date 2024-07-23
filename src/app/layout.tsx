@@ -12,6 +12,7 @@ import UserSettingsMenu from "~/screens/UserSettingsMenu";
 import { getUser } from "~/utils";
 import { routes } from "~/utils/routes";
 import Link from "next/link";
+import AppWrapper from "~/components/AppWrapper";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -33,12 +34,12 @@ const RootLayout = async ({ children }: LayoutProps) => {
         <SessionFetcher>
           <ThemeProvider>
             <div id="app" className={styles.app}>
-              <div className={styles.main}>
-                <Header />
+              <AppWrapper>
                 {user && <UserSettingsMenu user={user} />}
+                <Header />
                 {children}
                 <Footer />
-              </div>
+              </AppWrapper>
             </div>
           </ThemeProvider>
         </SessionFetcher>

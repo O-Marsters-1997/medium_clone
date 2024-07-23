@@ -27,6 +27,7 @@ export const textVariants = styleVariants({
       fontSize: fontSizes.bodyLg,
     },
   ],
+  h1: [heading, fontSizes.h1],
   h2: [heading, fontSizes.h2],
   h3: [
     body,

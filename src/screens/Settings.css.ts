@@ -5,6 +5,7 @@ import { spacing } from "~/styles/variables.css";
 export const styles = {
   userSettingsContainer: style({
     position: "absolute",
+    top: "11%",
     right: "2.5%",
     background: colors.bg.primary,
     boxShadow: "2px 6px 21px -2px rgba(0,0,0,0.25)",

@@ -12,16 +12,21 @@ import { useAuth } from "~/context/AuthContext";
 import { styles } from "~/screens/Settings.css";
 import { sprinkles } from "~/styles/sprinkles.css";
 import { spacing } from "~/styles/variables.css";
+import { useGetSearchParams } from "~/hooks/navigation";
+import { signOut } from "next-auth/react";
 
 type Props = {
   user: User;
 };
 
-type UserSettingsMenuItem = { icon?: IconDefinition; text: string };
+type UserSettingsMenuItem = {
+  icon?: IconDefinition;
+  text: string;
+  action?: () => void;
+};
 
 const UserSettingsMenu = ({ user }: Props) => {
-  const searchParams = useSearchParams();
-  const settings = searchParams.get("user_settings");
+  const settings = useGetSearchParams("user_settings");
 
   const userSettings: UserSettingsMenuItem[][] = [
     [
@@ -37,21 +42,27 @@ const UserSettingsMenu = ({ user }: Props) => {
       { text: "Help" },
     ],
     [{ text: "Beome a member" }, { text: "Gift a membership" }],
-    [{ text: "Sign out" }],
+    [{ text: "Sign out", action: signOut }],
   ];
 
   return (
     <>
       {settings && (
-        <div>
+        <div onClick={(evt) => evt.stopPropagation()}>
           <ListBox className={styles.userSettingsContainer}>
             {userSettings.map((group, index) => {
               return (
                 <ListBoxItem key={index}>
                   <div className={styles.settingGroup} key={index}>
-                    {group.map(({ text, icon }, index) => {
+                    {group.map(({ text, icon, action }, index) => {
                       return (
-                        <div key={index} className={styles.settingItem}>
+                        <div
+                          key={index}
+                          className={styles.settingItem}
+                          onClick={() => {
+                            action && action();
+                          }}
+                        >
                           {icon && (
                             <Icon icon={icon} size={"sm"} color="primary" />
                           )}
