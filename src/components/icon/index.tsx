@@ -8,6 +8,8 @@ A list of all available icons in the icon set.
 
 import { default as bookmark } from "./bookmark";
 
+import { default as cross } from "./cross";
+
 import { default as darkMode } from "./darkMode";
 
 import { default as facebook } from "./facebook";
@@ -26,6 +28,7 @@ import { default as story } from "./story";
 
 export type IconDefinition =
   | "bookmark"
+  | "cross"
   | "darkMode"
   | "facebook"
   | "google"
@@ -37,6 +40,7 @@ export type IconDefinition =
 
 export const IconSvg = {
   bookmark,
+  cross,
   darkMode,
   facebook,
   google,

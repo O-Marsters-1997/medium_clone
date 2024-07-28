@@ -19,6 +19,7 @@ export const vars = createThemeContract({
       },
       secondary: "",
       muted: "",
+      action: "",
     },
     button: {
       primary: "",

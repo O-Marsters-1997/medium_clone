@@ -4,18 +4,25 @@ import {
   spacing,
   media,
   heightsAndWidths,
-} from "./variables.css";
+  fontSizes,
+} from "~/styles/variables.css";
 
-const responsiveProperties = defineProperties({
+const baseConfig = {
   conditions: {
+    xxs: { "@media": media.xxs },
     xs: { "@media": media.xs },
     sm: { "@media": media.sm },
     md: { "@media": media.md },
     lg: { "@media": media.lg },
     xl: { "@media": media.lg },
   },
-  defaultCondition: "sm",
+  defaultCondition: "xxs",
+};
+
+const responsiveProperties = defineProperties({
+  ...baseConfig,
   properties: {
+    position: ["relative", "absolute"],
     display: ["none", "flex", "block", "inline"],
     flexDirection: ["row", "column"],
     justifyContent: [
@@ -39,6 +46,7 @@ const responsiveProperties = defineProperties({
     marginRight: spacing,
     height: heightsAndWidths,
     width: heightsAndWidths,
+    gap: spacing,
   },
   shorthands: {
     // Spacing
@@ -58,18 +66,12 @@ const responsiveProperties = defineProperties({
     ml: ["marginLeft"],
     h: ["height"],
     w: ["width"],
+    pos: ["position"],
   },
 });
 
 const systemProperties = defineProperties({
-  conditions: {
-    xs: { "@media": media.xs },
-    sm: { "@media": media.sm },
-    md: { "@media": media.md },
-    lg: { "@media": media.lg },
-    xl: { "@media": media.lg },
-  },
-  defaultCondition: "sm",
+  ...baseConfig,
   properties: {
     color: colorPalette,
     backgroundColor: colorPalette,
@@ -79,9 +81,25 @@ const systemProperties = defineProperties({
   },
 });
 
+const typograpghyProperties = defineProperties({
+  ...baseConfig,
+  properties: {
+    fontFamily: ["sans-serif", "serif", "monospace"],
+    fontSize: fontSizes,
+    fontWeight: ["normal", "bold", 500, 600, 700],
+    textDecoration: ["none", "underline"],
+    textAlign: ["center", "left", "right"],
+  },
+  shorthands: {
+    fw: ["fontWeight"],
+    td: ["textDecoration"],
+  },
+});
+
 export const sprinkles = createSprinkles(
   systemProperties,
   responsiveProperties,
+  typograpghyProperties,
 );
 
 export type Sprinkles = Parameters<typeof sprinkles>[0];

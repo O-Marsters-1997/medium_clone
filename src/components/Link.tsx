@@ -14,10 +14,7 @@ type Props = {
 
 const Link = ({ href, children, className }: Props) => {
   return (
-    <BaseLink
-      href={href}
-      className={clsx(styles.link, fontSizes.interactive, className)}
-    >
+    <BaseLink href={href} className={clsx(className)}>
       {children}
     </BaseLink>
   );

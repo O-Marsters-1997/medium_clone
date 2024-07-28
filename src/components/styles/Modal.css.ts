@@ -1,6 +1,6 @@
 import { style } from "@vanilla-extract/css";
 import { colors, utils } from "~/styles/theme/theme.css";
-import { spacing } from "~/styles/variables.css";
+import { media, spacing } from "~/styles/variables.css";
 
 export const styles = {
   modalContainer: style({
@@ -26,9 +26,26 @@ export const styles = {
     boxShadow: utils.boxShadow,
     height: "100%",
     width: "100%",
-    margin: "10%",
-    padding: spacing.s10,
+    maxWidth: "50rem",
+    padding: spacing.s6,
     zIndex: 25,
     cursor: "default",
+    fontSize: "3.5rem",
+    "@media": {
+      [media.sm]: {
+        margin: "10%",
+      },
+    },
+  }),
+  modalContent: style({
+    display: "flex",
+    flexDirection: "column",
+    gap: spacing.s8,
+    marginTop: "5rem",
+    alignItems: "center",
+  }),
+  modalIcon: style({
+    position: "absolute",
+    right: "5%",
   }),
 };

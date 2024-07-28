@@ -10,3 +10,14 @@ export const getUser = async () => {
     logger.error(err);
   }
 };
+
+export const getParamsValue = (
+  params: Record<string, string> | null | undefined,
+  target: string,
+) => {
+  if (!params) {
+    return params;
+  }
+
+  return params[target];
+};

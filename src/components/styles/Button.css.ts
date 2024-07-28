@@ -7,7 +7,7 @@ const baseButton = style({
   flex: 1,
   justifyContent: "flex-start",
   alignItems: "center",
-  gap: "2rem",
+  gap: "1rem",
   color: colors.text.secondary,
   borderRadius: "2.5em",
   padding: ".8rem 1.25rem",
@@ -54,6 +54,7 @@ export const styles = {
     baseButton,
     {
       position: "relative",
+      minWidth: "14.5rem",
       width: "100%",
       background: "transparent",
     },

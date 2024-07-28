@@ -14,6 +14,7 @@ const {
   grey,
   greyDarker,
   greyDark,
+  greenPrimary,
   greyDarkest,
 } = colorPalette;
 
@@ -47,6 +48,7 @@ export const lightTheme = createTheme(vars, {
       },
       secondary: white,
       muted: greyDark,
+      action: greenPrimary,
     },
     button: {
       primary: btnPrimary,
@@ -79,6 +81,7 @@ export const darkTheme = createTheme(vars, {
       },
       secondary: white,
       muted: greyDark,
+      action: greenPrimary,
     },
     button: {
       primary: btnPrimary,
@@ -111,6 +114,7 @@ export const unauthedTheme = createTheme(vars, {
       },
       secondary: white,
       muted: greyDark,
+      action: greenPrimary,
     },
     button: {
       primary: btnPrimary,

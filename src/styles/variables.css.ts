@@ -28,6 +28,7 @@ const breakpoints = {
 } as const;
 
 export const media = {
+  xxs: `screen and (min-width: ${breakpoints.xxs})`,
   xs: `screen and (min-width: ${breakpoints.xs})`,
   sm: `screen and (min-width: ${breakpoints.sm})`,
   md: `screen and (min-width: ${breakpoints.md})`,
@@ -80,6 +81,7 @@ export const fontSizes = {
 } as const;
 
 export const iconSizes = {
+  xs: 16,
   sm: 20,
   md: 26,
   lg: 48,
@@ -88,6 +90,7 @@ export const iconSizes = {
 export const heightsAndWidths = {
   "x-px": ".1px",
   "x-1": "0.125rem",
+  full: "100%",
 } as const;
 
 export const spacing = {

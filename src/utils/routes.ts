@@ -1,4 +1,5 @@
 export const routes = {
   home: "/",
-  login: "/?modal=true",
+  signin: "/?auth=signin",
+  signup: "/?auth=signup",
 } as const;

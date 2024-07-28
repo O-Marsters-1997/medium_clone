@@ -57,8 +57,9 @@ export const textVariants = styleVariants({
 });
 
 export const styles = {
-  loginModalTitle: style({
+  AuthModalTitle: style({
     fontSize: "1.75rem",
     fontWeight: "normal",
+    textAlign: "center",
   }),
 };

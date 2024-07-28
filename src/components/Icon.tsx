@@ -27,6 +27,7 @@ export type StyleProps = {
 
 type Props = StyleProps & {
   icon: IconDefinition;
+  className?: string;
   onClick?: () => void;
 };
 
@@ -57,7 +58,7 @@ const getDimensions = (size?: ValidIconSizePropOption): IconSizeVariantMap => {
   };
 };
 
-const Icon = ({ icon, color, size, onClick }: Props) => {
+const Icon = ({ icon, color, size, className, onClick }: Props) => {
   const { selectedTheme } = useTheme();
 
   const iconColor = color && iconColorMap[color][selectedTheme];
@@ -70,7 +71,7 @@ const Icon = ({ icon, color, size, onClick }: Props) => {
       color={iconColor}
       height={iconSizes[height]}
       width={iconSizes[width]}
-      className={clsx(onClick && styles.clickable)}
+      className={clsx(onClick && styles.clickable, className)}
       onClick={onClick}
     />
   );
