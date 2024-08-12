@@ -12,9 +12,7 @@ type ModalVariantCopy = {
   href: string;
 };
 
-export const getAlternativeAuthVariant = (
-  variant: AuthVariant,
-): ModalVariantCopy => {
+export const getAuthVariantCopy = (variant: AuthVariant): ModalVariantCopy => {
   return variant.includes("signin")
     ? {
         title: "Welcome back.",

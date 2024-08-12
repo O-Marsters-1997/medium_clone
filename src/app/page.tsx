@@ -1,36 +1,24 @@
-import Button from "~/components/Button";
-import Text from "~/components/Text";
+import Dashboard from "~/screens/dashboard/Dashboard";
 import AuthScreen from "~/screens/login/AuthScreen";
-import pageStyles from "~/styles/pages/Home.css";
-import { getParamsValue } from "~/utils";
-import { routes } from "~/utils/routes";
-import { AuthVariant } from "~/utils/navigation";
-import ProviderAuth from "~/components/Auth/ProviderAuth";
+import pageStyles from "~/styles/pages/Login.css";
+import { SearchParams } from "~/types";
+import { getUser } from "~/utils";
 
 type Props = {
-  searchParams: Record<string, string> | null | undefined;
+  searchParams: SearchParams;
 };
 
-const Home = ({ searchParams }: Props) => {
-  const authModalVariant = getParamsValue(
-    searchParams,
-    "auth",
-  ) as AuthVariant | null;
-  const { heroContainer, heroWrapper } = pageStyles;
+const Home = async ({ searchParams }: Props) => {
+  const user = await getUser();
 
   return (
-    <main className={heroContainer}>
-      <div className={heroWrapper}>
-        <Text variant="h2">Human stories & ideas</Text>
-        <Text variant="h3">
-          A place to read, write, and deepen your understanding
-        </Text>
-        <Button href={routes.signup} variant="secondary">
-          Start Reading
-        </Button>
-      </div>
-      {authModalVariant && <AuthScreen variant={authModalVariant} />}
-    </main>
+    <>
+      {user === null ? (
+        <AuthScreen searchParams={searchParams} />
+      ) : (
+        <Dashboard />
+      )}
+    </>
   );
 };
 

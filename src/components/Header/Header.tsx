@@ -24,7 +24,7 @@ const Header = async () => {
   const navLinks: NavLink[] = [
     { label: "Our story", url: "" },
     { label: "Write", url: "" },
-    { label: "Sign in", url: routes.login },
+    { label: "Sign in", url: routes.signin },
   ];
 
   return (
@@ -58,7 +58,7 @@ const Header = async () => {
                   {link.label}
                 </Link>
               ))}
-              <Button variant="primary" href={routes.login}>
+              <Button variant="primary" href={routes.signin}>
                 Get started
               </Button>
             </ul>

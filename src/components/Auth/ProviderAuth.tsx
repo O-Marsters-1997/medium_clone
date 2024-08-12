@@ -10,14 +10,14 @@ import { styles as buttonStyles } from "~/components/styles/Button.css";
 import { logger } from "~/utils/logger";
 import { routes } from "~/utils/routes";
 import { sprinkles } from "~/styles/sprinkles.css";
-import { AuthVariant, getAlternativeAuthVariant } from "~/utils/navigation";
+import { AuthVariant, getAuthVariantCopy } from "~/utils/navigation";
 
 type Props = {
   variant: AuthVariant;
 };
 
 const ProviderAuth = ({ variant }: Props) => {
-  const { buttonText } = getAlternativeAuthVariant(variant);
+  const { buttonText } = getAuthVariantCopy(variant);
 
   return (
     <>

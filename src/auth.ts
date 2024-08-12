@@ -28,11 +28,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     signIn: routes.signin,
   },
   callbacks: {
-    async jwt({ token }) {
+    jwt: async ({ token }) => {
       return token;
     },
 
-    async session({ session, token }) {
+    session: async ({ session, token }) => {
       if (token) {
       }
 
