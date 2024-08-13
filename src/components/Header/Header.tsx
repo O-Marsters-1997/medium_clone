@@ -9,9 +9,6 @@ import { getUser } from "~/utils";
 import ThemeToggle from "~/components/ThemeToggle";
 import Searchbar from "~/components/Searchbar";
 import Avatar from "~/components/Avatar";
-import Text from "~/components/Text";
-import UserSettingsMenu from "~/screens/UserSettingsMenu";
-import clsx from "clsx";
 
 type NavLink = {
   label: string;

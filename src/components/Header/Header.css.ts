@@ -33,11 +33,13 @@ export const styles = {
     alignItems: "center",
     gap: "1.5em",
     listStyle: "none",
-    cursor: "pointer",
     padding: `0 ${spacing.s2}`,
   }),
   navListItem: style({
     display: "none",
+    color: colors.text.primary.main,
+    textDecoration: "none",
+    cursor: "pointer",
     "@media": {
       [media.md]: {
         display: "block",
