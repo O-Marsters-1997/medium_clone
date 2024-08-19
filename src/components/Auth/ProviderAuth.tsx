@@ -18,6 +18,8 @@ type Props = {
 const ProviderAuth = ({ variant }: Props) => {
   const { buttonText } = getAuthVariantCopy(variant);
 
+  console.log(providerMap);
+
   return (
     <>
       {Object.values(providerMap).map((provider) => (

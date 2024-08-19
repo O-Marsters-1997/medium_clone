@@ -2,10 +2,9 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import NextAuth from "next-auth";
 import prisma from "~/lib/prisma";
 import { routes } from "~/utils/routes";
-import Facebook from "next-auth/providers/github"
-import Google from "next-auth/providers/google"
+import Facebook from "next-auth/providers/facebook";
+import Google from "next-auth/providers/google";
 import type { Provider } from "next-auth/providers";
-
 
 export type AuthProvider = {
   id: "google" | "facebook";
