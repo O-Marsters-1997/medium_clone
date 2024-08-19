@@ -1,11 +1,11 @@
 import Dashboard from "~/screens/dashboard/Dashboard";
 import AuthScreen from "~/screens/login/AuthScreen";
-import pageStyles from "~/styles/pages/Login.css";
-import { SearchParams } from "~/types";
+import { Post, SearchParams } from "~/types";
 import { getUser } from "~/utils";
 
 type Props = {
   searchParams: SearchParams;
+  posts: Post[];
 };
 
 const Home = async ({ searchParams }: Props) => {

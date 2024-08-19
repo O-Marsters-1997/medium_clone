@@ -15,3 +15,13 @@ export const getParamsValue = (
 
   return params[target];
 };
+
+export const mustGet = <T, U extends T>(
+  value: T,
+  typeGuard: (value: T) => value is U,
+): T => {
+  if (typeGuard(value)) {
+    return value;
+  }
+  throw new Error("Value does not match the expected type");
+};

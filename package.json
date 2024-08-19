@@ -17,7 +17,9 @@
     "prisma:reset": "prisma migrate reset",
     "postinstall": "bun generate",
     "generate:icons": "@svgr/cli -- ./src/assets/icons",
-    "sanity": "sanity dev"
+    "sanity": "sanity dev",
+    "sanity:schema": "sanity schema extract --path src/sanity/schema.json",
+    "sanity:typegen": "sanity typegen generate"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.4.1",
@@ -49,6 +51,7 @@
     "react-aria-components": "^1.2.1",
     "react-dom": "18.2.0",
     "sanity": "3",
+    "sanity-plugin-computed-field": "^2.0.0",
     "styled-components": "6",
     "svgo": "^3.3.2"
   },

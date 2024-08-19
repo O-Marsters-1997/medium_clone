@@ -23,13 +23,15 @@
     }
   },
   "include": [
-    "svgr.d.ts",
+    "src/lib/types/*.d.ts",
+    "src/lib/types/svgr.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/seed/index.cts",
-    "src/utils/icon/template.js"
+    "src/utils/icon/template.js",
+    "src/sanity/components/PostIdInput.jsx"
   ],
   "exclude": ["node_modules"]
 }
