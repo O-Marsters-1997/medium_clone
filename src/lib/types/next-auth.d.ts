@@ -1,6 +1,6 @@
 import NextAuth, { type DefaultSession } from "next-auth";
 
-type Role = "user" | "member";
+export type Role = "user" | "member";
 
 declare module "next-auth" {
   type User = {

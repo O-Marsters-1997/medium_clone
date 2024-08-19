@@ -18,6 +18,10 @@ const iconColorMap = {
     light: colorPalette.iconPrimary,
     dark: colorPalette.iconPrimaryDark,
   },
+  secondary: {
+    light: colorPalette.gold,
+    dark: colorPalette.gold,
+  },
 };
 
 export type StyleProps = {
@@ -63,8 +67,6 @@ const Icon = ({ icon, color, size, className, onClick }: Props) => {
 
   const iconColor = color && iconColorMap[color][selectedTheme];
   const SvgIcon = IconSvg[icon];
-
-  console.log(icon);
 
   const { height, width } = getDimensions(size);
 

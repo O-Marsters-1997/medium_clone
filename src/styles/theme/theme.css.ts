@@ -1,4 +1,5 @@
 import { createThemeContract } from "@vanilla-extract/css";
+import { textVariants } from "~/styles/theme/typography.css";
 
 export const vars = createThemeContract({
   colors: {
@@ -19,7 +20,7 @@ export const vars = createThemeContract({
       },
       secondary: "",
       muted: "",
-      action: "",
+      action: { main: "", highlight: "" },
     },
     button: {
       primary: "",
@@ -27,7 +28,8 @@ export const vars = createThemeContract({
     },
     muted: {
       primary: "",
-      bold: "",
+      lighter: "",
+      darker: "",
     },
   },
   typograpghy: {

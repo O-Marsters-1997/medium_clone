@@ -22,6 +22,8 @@ import { default as profile } from "./profile";
 
 import { default as search } from "./search";
 
+import { default as star } from "./star";
+
 import { default as stats } from "./stats";
 
 import { default as story } from "./story";
@@ -35,6 +37,7 @@ export type IconDefinition =
   | "lightMode"
   | "profile"
   | "search"
+  | "star"
   | "stats"
   | "story";
 
@@ -47,6 +50,7 @@ export const IconSvg = {
   lightMode,
   profile,
   search,
+  star,
   stats,
   story,
 };

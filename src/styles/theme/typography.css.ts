@@ -15,13 +15,19 @@ const baseTextStyles = {
 const { body, heading } = baseTextStyles;
 
 export const textVariants = styleVariants({
-  body1: [
+  body: [
     body,
     {
       fontSize: fontSizes.body,
     },
   ],
-  body2: [
+  bodySm: [
+    body,
+    {
+      fontSize: fontSizes.bodySm,
+    },
+  ],
+  bodyLg: [
     body,
     {
       fontSize: fontSizes.bodyLg,

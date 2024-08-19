@@ -12,10 +12,12 @@ export const colorPalette = {
   iconPrimary: "hsl(0,0%,56%)",
   iconPrimaryDark: "hsl(0,0%,56%)",
   grey: "hsl(0, 0%, 95%)",
+  greyLighter: "hsl(0, 0%, 97%)",
   greyDarker: "hsl(0, 0%, 76%)",
   greyDark: "hsl(0, 0%, 42%)",
   greyDarkest: "hsl(0, 0%, 37%)",
   greenPrimary: "hsl(119,71%,31%)",
+  gold: "hsl(44, 98%, 56%)",
 } as const;
 
 const breakpoints = {

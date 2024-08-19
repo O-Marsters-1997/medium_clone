@@ -8,7 +8,7 @@ type TextElementProps = {
 
 type Props = {
   variant: keyof typeof textVariants;
-  children: ReactNode;
+  children: string;
   className?: string;
 };
 
@@ -16,8 +16,9 @@ const textVariantsMap: Record<
   keyof typeof textVariants,
   React.ElementType<TextElementProps>
 > = {
-  body1: "span",
-  body2: "span",
+  body: "span",
+  bodySm: "span",
+  bodyLg: "span",
   h1: "h1",
   h2: "h2",
   h3: "h3",

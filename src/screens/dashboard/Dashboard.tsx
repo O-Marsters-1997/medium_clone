@@ -8,11 +8,9 @@ const Dashboard = async () => {
   const posts = await fetchPosts();
   const { role } = await getUser();
 
-  console.log(role);
-
   return (
     <>
-      <Banner />
+      {role !== "member" && <Banner />}
       {posts.map(({ _id, title }) => {
         if (title === null) {
           throw new Error("No title provided");

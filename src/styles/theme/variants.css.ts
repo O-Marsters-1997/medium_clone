@@ -12,10 +12,12 @@ const {
   btnPrimary,
   btnSecondary,
   grey,
+  greyLighter,
   greyDarker,
   greyDark,
   greenPrimary,
   greyDarkest,
+  gold,
 } = colorPalette;
 
 const baseStyles = {
@@ -48,7 +50,7 @@ export const lightTheme = createTheme(vars, {
       },
       secondary: white,
       muted: greyDark,
-      action: greenPrimary,
+      action: { main: greenPrimary, highlight: gold },
     },
     button: {
       primary: btnPrimary,
@@ -56,7 +58,8 @@ export const lightTheme = createTheme(vars, {
     },
     muted: {
       primary: grey,
-      bold: greyDarker,
+      lighter: greyLighter,
+      darker: greyDarker,
     },
   },
 });
@@ -81,7 +84,10 @@ export const darkTheme = createTheme(vars, {
       },
       secondary: white,
       muted: greyDark,
-      action: greenPrimary,
+      action: {
+        main: greenPrimary,
+        highlight: gold,
+      },
     },
     button: {
       primary: btnPrimary,
@@ -89,7 +95,8 @@ export const darkTheme = createTheme(vars, {
     },
     muted: {
       primary: grey,
-      bold: greyDarker,
+      lighter: greyLighter,
+      darker: greyDarker,
     },
   },
 });
@@ -114,7 +121,10 @@ export const unauthedTheme = createTheme(vars, {
       },
       secondary: white,
       muted: greyDark,
-      action: greenPrimary,
+      action: {
+        main: greenPrimary,
+        highlight: gold,
+      },
     },
     button: {
       primary: btnPrimary,
@@ -122,7 +132,8 @@ export const unauthedTheme = createTheme(vars, {
     },
     muted: {
       primary: grey,
-      bold: greyDarker,
+      lighter: greyLighter,
+      darker: greyDarker,
     },
   },
 });
