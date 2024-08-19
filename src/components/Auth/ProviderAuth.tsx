@@ -3,7 +3,7 @@
 import { AuthError } from "next-auth";
 import { redirect } from "next/navigation";
 import React from "react";
-import { providerMap, signIn } from "~/auth";
+import { providerMap, signIn } from "~/lib/auth";
 import Button from "~/components/Button";
 import { styles as buttonStyles } from "~/components/styles/Button.css";
 import { logger } from "~/utils/logger";

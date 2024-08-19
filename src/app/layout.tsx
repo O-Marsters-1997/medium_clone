@@ -5,7 +5,7 @@ import ThemeProvider from "~/context/ThemeContext";
 import Header from "~/components/Header/Header";
 import Footer from "~/components/Footer";
 import { styles } from "~/styles/globals.css";
-import { auth } from "~/auth";
+import { auth } from "~/lib/auth";
 import { ReactNode } from "react";
 import AuthProvider from "~/context/AuthContext";
 import UserSettingsMenu from "~/screens/UserSettingsMenu";
