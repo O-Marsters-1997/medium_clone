@@ -303,7 +303,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./src/sanity/queries/index.ts
 // Variable: PostsQuery
-// Query: *[_type == 'post']{  _id, title, body, publishedAt, author->{name}}
+// Query: *[_type == 'post']{      _id, title, body, publishedAt, author->{name}    }
 export type PostsQueryResult = Array<{
   _id: string;
   title: string | null;
@@ -344,4 +344,10 @@ export type PostsQueryResult = Array<{
   author: {
     name: string | null;
   } | null;
+}>;
+// Variable: CategoriesQuery
+// Query: *[_type == 'category']{      _id, title    }
+export type CategoriesQueryResult = Array<{
+  _id: string;
+  title: string | null;
 }>;

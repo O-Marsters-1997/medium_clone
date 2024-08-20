@@ -5,7 +5,6 @@ import { getUser } from "~/utils";
 
 type Props = {
   searchParams: SearchParams;
-  posts: Post[];
 };
 
 const Home = async ({ searchParams }: Props) => {

@@ -1,23 +1,26 @@
 import React from "react";
 import Banner from "~/components/Banner";
 import Post from "~/components/Post";
-import { fetchPosts } from "~/sanity/queries";
+import Tags from "~/components/Tags";
+import { fetchCategories, fetchPosts } from "~/sanity/queries";
+import PostSummaries from "~/screens/dashboard/PostSummaries";
 import { getUser } from "~/utils/auth";
+
+import "~/styles/pages/Dashboard.css";
 
 const Dashboard = async () => {
   const posts = await fetchPosts();
+  const categories = await fetchCategories();
+
   const { role } = await getUser();
 
   return (
     <>
       {role !== "member" && <Banner />}
-      {posts.map(({ _id, title }) => {
-        if (title === null) {
-          throw new Error("No title provided");
-        }
-
-        return <Post title={title} key={_id} />;
-      })}
+      <div className="page-layout">
+        <PostSummaries className="explore-section" />
+        <div className="sidebar">hello</div>
+      </div>
     </>
   );
 };

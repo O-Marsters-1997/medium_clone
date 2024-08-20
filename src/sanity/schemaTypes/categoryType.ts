@@ -1,5 +1,6 @@
 import { TagIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
+import { mustContainNanoId, slugifyWithNanoId } from "../utils";
 
 export const categoryType = defineType({
   name: "category",
@@ -15,11 +16,9 @@ export const categoryType = defineType({
       type: "slug",
       options: {
         source: "title",
+        slugify: (input) => slugifyWithNanoId(input),
       },
-    }),
-    defineField({
-      name: "description",
-      type: "text",
+      validation: (rule) => mustContainNanoId(rule),
     }),
   ],
 });

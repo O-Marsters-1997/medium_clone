@@ -16,10 +16,14 @@ export const vars = createThemeContract({
     text: {
       primary: {
         main: "",
+        lighter: "",
         bold: "",
       },
       secondary: "",
-      muted: "",
+      muted: {
+        main: "",
+        lighter: "",
+      },
       action: { main: "", highlight: "" },
     },
     button: {

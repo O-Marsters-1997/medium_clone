@@ -1,5 +1,6 @@
 import { nanoid } from "nanoid";
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { mustContainNanoId, slugifyWithNanoId } from "../utils/index";
 
 export const postType = defineType({
   name: "post",
@@ -16,25 +17,9 @@ export const postType = defineType({
       type: "slug",
       options: {
         source: "title",
-        slugify: (input) => {
-          const id = nanoid();
-          return `${input}_${id}`;
-        },
+        slugify: (input) => slugifyWithNanoId(input),
       },
-      validation: (rule) => [
-        rule.custom((slug) => {
-          if (!slug?.current) {
-            return "slug is required";
-          }
-
-          const nanoidPattern = /_([a-zA-Z0-9_-]{21})$/;
-          if (!nanoidPattern.test(slug.current)) {
-            return "slug must end with an underscore followed by a 21-character nanoid";
-          }
-
-          return true;
-        }),
-      ],
+      validation: (rule) => mustContainNanoId(rule),
     }),
     defineField({
       name: "author",

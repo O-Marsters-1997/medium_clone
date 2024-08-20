@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Icon from "~/components/Icon";
 import Link from "~/components/Link";
 import { styles } from "~/components/styles/Banner.css";
@@ -10,10 +10,13 @@ import { routes } from "~/utils/routes";
 
 const Banner = () => {
   const { user } = useMustAuth();
-  const showBannerOnLoad =
-    user.role !== "member" && !localStorage.getItem("bannerDismissed");
+  const [showBanner, setShowBanner] = useState(false);
 
-  const [showBanner, setShowBanner] = useState(showBannerOnLoad);
+  useEffect(() => {
+    const showBannerOnLoad =
+      user.role !== "member" && !localStorage.getItem("bannerDismissed");
+    setShowBanner(showBannerOnLoad);
+  }, [user]);
 
   const { banner, wrapper, close } = styles;
 

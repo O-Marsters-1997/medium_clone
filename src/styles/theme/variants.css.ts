@@ -45,11 +45,15 @@ export const lightTheme = createTheme(vars, {
     },
     text: {
       primary: {
-        main: offBlack,
+        main: "hsl(0, 0%, 13%)",
+        lighter: "hsl(0, 0%, 46%)",
         bold: black,
       },
       secondary: white,
-      muted: greyDark,
+      muted: {
+        main: greyDark,
+        lighter: "hsl(0, 0%, 69%)",
+      },
       action: { main: greenPrimary, highlight: gold },
     },
     button: {
@@ -80,10 +84,14 @@ export const darkTheme = createTheme(vars, {
     text: {
       primary: {
         main: offBlack,
+        lighter: offBlack,
         bold: black,
       },
       secondary: white,
-      muted: greyDark,
+      muted: {
+        main: greyDark,
+        lighter: greyDark,
+      },
       action: {
         main: greenPrimary,
         highlight: gold,
@@ -117,10 +125,14 @@ export const unauthedTheme = createTheme(vars, {
     text: {
       primary: {
         main: offBlack,
+        lighter: offBlack,
         bold: black,
       },
       secondary: white,
-      muted: greyDark,
+      muted: {
+        main: greyDark,
+        lighter: greyDark,
+      },
       action: {
         main: greenPrimary,
         highlight: gold,
