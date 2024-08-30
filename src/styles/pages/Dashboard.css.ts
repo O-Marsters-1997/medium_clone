@@ -18,6 +18,6 @@ globalStyle(".explore-section", {
 
 globalStyle(".sidebar", {
   display: "none",
-  flex: 0,
+  flex: 1,
   ...responsiveStyles("md", { display: "inline-block" }),
 });

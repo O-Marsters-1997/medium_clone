@@ -11,5 +11,8 @@ export type SearchParams = Record<string, string> | null | undefined;
 export type Post = ArrayElement<PostsQueryResult>;
 export type Posts = PostsQueryResult;
 
-export type Category = ArrayElement<CategoriesQueryResult>;
-export type Categories = CategoriesQueryResult;
+export type Category = ArrayElement<CategoriesQueryResult> & {
+  urlParamReference: string;
+};
+
+export type Categories = Category[];

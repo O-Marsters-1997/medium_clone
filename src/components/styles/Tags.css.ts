@@ -14,7 +14,6 @@ export const styles = {
     display: "flex",
     justifyContent: "center",
     overflow: "hidden",
-    width: "100%",
   }),
   listBox: style({
     display: "flex",
@@ -25,17 +24,25 @@ export const styles = {
     gap: "2em",
     margin: "0 2.5em",
   }),
+
   listItem: style({
-    cursor: "pointer",
     color: colors.text.primary.lighter,
-    outline: "none",
     whiteSpace: "nowrap",
+    outline: "none",
+    cursor: "pointer",
     selectors: {
       "&[data-selected]": {
         color: colors.text.primary.main,
         border: "none",
       },
     },
+  }),
+  listItemBorder: style({
+    display: "block",
+    height: "1px",
+    width: "100%",
+    borderRadius: "5px",
+    background: "black",
   }),
   icon: style({
     cursor: "pointer",

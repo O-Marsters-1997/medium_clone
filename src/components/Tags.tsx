@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useRef, useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { Post } from "@prisma/client";
 import { ListBox, ListBoxItem } from "react-aria-components";
 import Icon from "~/components/Icon";
@@ -9,6 +10,8 @@ import { Categories, Category, Posts } from "~/types";
 import { styles } from "~/components/styles/Tags.css";
 import clsx from "clsx";
 import { sprinkles } from "~/styles/sprinkles.css";
+import Link from "~/components/Link";
+import { routes } from "~/utils/routes";
 
 type Props = {
   categories: Categories;
@@ -34,6 +37,8 @@ const ChevronIcon = ({ className, onSlide }: ChevronIconProps) => {
 };
 
 const Tags = ({ categories }: Props) => {
+  const router = useRouter();
+
   const [hasSlid, setHasSlid] = useState(true);
   const ref = useRef<HTMLDivElement | null>(null);
   const firstItemRef = useRef<HTMLDivElement | null>(null);
@@ -97,14 +102,27 @@ const Tags = ({ categories }: Props) => {
           aria-label="Filtered category"
           className={listBox}
         >
-          {categories.map((category, index) => (
-            <ListBoxItem
-              ref={index == 0 ? firstItemRef : null}
-              className={listItem}
-            >
-              {category.title}
-            </ListBoxItem>
-          ))}
+          {categories.map((category, index) => {
+            const urlParams = new URLSearchParams({
+              tag: category.urlParamReference,
+            });
+
+            return (
+              <ListBoxItem
+                ref={index == 0 ? firstItemRef : null}
+                className={listItem}
+                onAction={() => {
+                  const urlParams = new URLSearchParams({
+                    tag: category.title!,
+                  });
+
+                  router.push(`${routes.home}?${urlParams.toString()}`);
+                }}
+              >
+                {category.title}
+              </ListBoxItem>
+            );
+          })}
         </ListBox>
       </div>
       <ChevronIcon onSlide={slideForward} />

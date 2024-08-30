@@ -15,7 +15,7 @@ const Home = async ({ searchParams }: Props) => {
       {user === null ? (
         <AuthScreen searchParams={searchParams} />
       ) : (
-        <Dashboard />
+        <Dashboard searchParams={searchParams} />
       )}
     </>
   );

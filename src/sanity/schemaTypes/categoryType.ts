@@ -1,4 +1,3 @@
-import { TagIcon } from "@sanity/icons";
 import { defineField, defineType } from "sanity";
 import { mustContainNanoId, slugifyWithNanoId } from "../utils";
 
@@ -20,5 +19,13 @@ export const categoryType = defineType({
       },
       validation: (rule) => mustContainNanoId(rule),
     }),
+    defineField({
+      name: "featured",
+      type: "boolean",
+      validation: (rule) => rule.required(),
+    }),
   ],
+  initialValue: {
+    featured: false,
+  },
 });

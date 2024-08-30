@@ -23,4 +23,5 @@ globalStyle("hr", {
 globalStyle("a", {
   color: colors.text.primary.main,
   fontSize: fontSizes.bodySm,
+  textDecoration: "none",
 });
