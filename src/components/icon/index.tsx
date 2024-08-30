@@ -20,6 +20,8 @@ import { default as google } from "./google";
 
 import { default as lightMode } from "./lightMode";
 
+import { default as plus } from "./plus";
+
 import { default as profile } from "./profile";
 
 import { default as search } from "./search";
@@ -38,6 +40,7 @@ export type IconDefinition =
   | "facebook"
   | "google"
   | "lightMode"
+  | "plus"
   | "profile"
   | "search"
   | "star"
@@ -52,6 +55,7 @@ export const IconSvg = {
   facebook,
   google,
   lightMode,
+  plus,
   profile,
   search,
   star,

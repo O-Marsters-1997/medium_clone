@@ -13,3 +13,14 @@ export const pagePadding = (py?: keyof typeof spacing) => {
     },
   });
 };
+
+export const responsiveStyles = (
+  breakpoint: keyof typeof media,
+  values: { [key: string]: any },
+) => {
+  return {
+    "@media": {
+      [media[breakpoint]]: values,
+    },
+  };
+};

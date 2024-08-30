@@ -8,7 +8,7 @@ type TextElementProps = {
 
 type Props = {
   variant: keyof typeof textVariants;
-  children: string;
+  children: ReactNode;
   className?: string;
 };
 
@@ -28,12 +28,12 @@ const textVariantsMap: Record<
 };
 
 const Text = ({ variant, children, className }: Props) => {
-  const TextElement = textVariantsMap[variant];
-
-  return (
-    <TextElement className={clsx(textVariants[variant], className)}>
-      {children}
-    </TextElement>
+  return React.createElement(
+    textVariantsMap[variant],
+    {
+      className: clsx(textVariants[variant], className),
+    },
+    children,
   );
 };
 

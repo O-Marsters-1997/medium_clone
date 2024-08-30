@@ -23,7 +23,7 @@ export const styles = {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    gap: "2rem",
+    gap: ".75rem",
     marginLeft: "auto",
   }),
   navList: style({

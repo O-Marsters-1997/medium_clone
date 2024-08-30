@@ -7,26 +7,40 @@ export const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "2rem",
+    width: "100%",
+    overflow: "hidden",
+  }),
+  listBoxWrapper: style({
+    display: "flex",
+    justifyContent: "center",
+    overflow: "hidden",
+    width: "100%",
   }),
   listBox: style({
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
-    gap: "1.15em",
+    overflow: "hidden",
+    width: "100%",
+    gap: "2em",
+    margin: "0 2.5em",
   }),
   listItem: style({
     cursor: "pointer",
     color: colors.text.primary.lighter,
+    outline: "none",
+    whiteSpace: "nowrap",
     selectors: {
       "&[data-selected]": {
-        textDecoration: "underline",
-        textUnderlineOffset: "1.25em",
         color: colors.text.primary.main,
         border: "none",
       },
     },
   }),
   icon: style({
+    cursor: "pointer",
+  }),
+  chevron: style({
     selectors: {
       "&:first-of-type": {
         transform: "rotate(270deg)",

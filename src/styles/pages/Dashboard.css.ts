@@ -1,4 +1,5 @@
 import { globalStyle } from "@vanilla-extract/css";
+import { responsiveStyles } from "~/styles/utils";
 import { media } from "~/styles/variables.css";
 
 globalStyle(".page-layout", {
@@ -6,15 +7,17 @@ globalStyle(".page-layout", {
 });
 
 globalStyle(".explore-section", {
-  flex: 2.5,
+  flex: 2,
+  display: "flex",
+  flexDirection: "column",
+  width: "100%",
+  overflow: "hidden",
+  boxSizing: "border-box",
+  position: "relative",
 });
 
 globalStyle(".sidebar", {
   display: "none",
-  flex: 1,
-  "@media": {
-    [media.md]: {
-      display: "inline-block",
-    },
-  },
+  flex: 0,
+  ...responsiveStyles("md", { display: "inline-block" }),
 });
